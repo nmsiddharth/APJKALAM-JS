@@ -12,12 +12,52 @@
     <hr>
 
     <script>
-        var hello;
-        document.write(hello,"<br>");
+     var user = ["sd", "js", "sdf"];
+     document.write("user = ",user,"<hr>");
 
-        hello = "hi js";
-        document.write("<b>Value :</b>",hello,"<br>");
-        document.write("<b>Value :", hello,"</b><br>");
-        document.write(`<b>Value :${hello}</b><br>`);
-        document.write(typeof(hello),"<br>");
+
+     var emp = new Array();
+     document.write("emp = ",typeof(emp),"<hr>");
+
+     emp[0]= "first";
+     emp[1]= "last";
+     document.write("emp = ",emp,"<hr>");
+     console.log(emp);
+
+     var empDetails = new Array("sid", "name")
+     document.write("empDetails =" ,empDetails,'<hr>');
+
+
+     var colors = {
+        name : "sid",
+        age : 23
+     };
+     document.write("colors =",colors,'<hr>');
+
+     var cars = [
+        {
+            name:"benz",
+            price:500
+        },
+        {
+            name: "bmw",
+            price:600
+        }
+     ];
+     document.write("cars =",cars,'<hr>');
+     console.log(cars);
+
+     var bikes = [
+        {
+            "name":"bullet",
+            "price": 500
+        },
+        {
+            "name":"cd",
+            "price": 100
+        }
+     ];
+     document.write(typeof(bikes),'<hr>');
+     document.write(bikes);
+     
     </script>
