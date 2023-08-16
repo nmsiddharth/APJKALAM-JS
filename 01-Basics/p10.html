@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-BASICS</title>
+    <style>
+       div{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+       }
+       img{
+        padding: 20px;
+        height: 200px;
+       }
+    </style>
+  </head>
+  <body>
+    <center>
+        <h1>
+         Logical Operators
+        </h1>
+    </center>
+    <div>
+        <img src="assets/images/ANDGate.png" alt="" >
+        <img src="assets/images/ORGate.png" alt="">
+        <img src="assets/images/XORGate.png" alt="">
+        <img src="assets/images/NOTGate.jpg" alt="">
+    </div>
+    
+    <hr>
+    
+    <script>
+      let firstNumber = 33,
+        secondNumber = 66;
+        thirdNumber = 99;
+        fourthNumber = 66;
+         
+        document.writeln(`<h1>FirstNumber = ${firstNumber}, SecondNumber = ${secondNumber}, ThirdNumber = ${thirdNumber}, FourthNumber = ${fourthNumber}, </h1><hr>`);
+        document.writeln(`The logical AND operator works on Boolean expressions, and returns Boolean values only. The bitwise AND operator works on integer, short int, long, unsigned int type data, and also returns that type of data.<hr>`);
+        document.writeln(`<h2>Logical AND</h2>`)
+        if(firstNumber==secondNumber && thirdNumber==fourthNumber){
+            document.writeln(`<p>Condition true</p>`);
+        }
+        else{
+            document.writeln(`<p>Condition false</p>`);
+        }
+        document.writeln(`<hr>`)
+
+        document.writeln(`<h2>Logical OR</h2>`)
+        if(firstNumber==thirdNumber || secondNumber==fourthNumber){
+            document.writeln(`<p>Condition true</p>`);
+        }
+        else{
+            document.writeln(`<p>Condition false</p>`);
+        }
+        document.writeln(`<hr>`)
+
+        document.writeln(`<h2>Logical NOT</h2>`)
+        if(secondNumber!=fourthNumber){
+            document.writeln(`<p>Condition true</p>`);
+        }
+        else{
+            document.writeln(`<p>Condition false</p>`);
+        }
+        document.writeln(`<hr>`)
+    </script>
+  </body>
+</html>

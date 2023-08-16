@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-BASICS</title>
+    <style>
+       div{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+       }
+       img{
+        padding: 20px;
+        height: 200px;
+       }
+    </style>
+  </head>
+  <body>
+    <center>
+        <h1>
+         Bitwise Operations
+        </h1>
+    </center>
+    <div>
+        <img src="assets/images/ANDGate.png" alt="" >
+        <img src="assets/images/ORGate.png" alt="">
+        <img src="assets/images/XORGate.png" alt="">
+        <img src="assets/images/NOTGate.jpg" alt="">
+    </div>
+    
+    <hr>
+    
+    <script>
+      let firstNumber = 5,
+        secondNumber = 14;
+        thirdNumber = 14;
+        fourthNumber = 5;
+         
+        document.writeln(`<h1>FirstNumber = ${firstNumber}, SecondNumber = ${secondNumber}, ThirdNumber = ${thirdNumber}, FourthNumber = ${fourthNumber}, </h1><hr>`);
+        
+        document.writeln(`<h2>Bitwise AND</h2>`)
+        if(firstNumber==secondNumber & thirdNumber==fourthNumber){
+            document.writeln(`<p>Condition true</p>`);
+        }
+        else{
+            document.writeln(`<p>Condition false</p>`);
+        }
+        document.writeln(`<hr>`)
+        
+        document.writeln(`<h2>Bitwise OR</h2>`)
+        if(firstNumber==secondNumber | thirdNumber==secondNumber){
+            document.writeln(`<p>Condition true</p>`);
+        }
+        else{
+            document.writeln(`<p>Condition false</p>`);
+        }
+        document.writeln(`<hr>`)
+
+        document.writeln(`<h2>Bitwise XOR</h2>`)
+        if(firstNumber==secondNumber ^ thirdNumber==fourthNumber){
+            document.writeln(`<p>Condition true</p>`);  
+        }
+        else{
+            document.writeln(`<p>Condition false</p>`);
+        }
+        document.writeln(`<hr>`)
+
+        document.writeln(`<h2>Bitwise NOT</h2>`)
+        if(~thirdNumber==secondNumber){
+            document.writeln(`<p>Condition true</p>`);  
+        }
+        else{
+            document.writeln(`<p>Condition false</p>`);
+        }
+        document.writeln(`<hr>`)
+
+        document.writeln(`<h2>Bitwise Left Shift</h2>`)
+        document.writeln(`<p>here in this example : secondNumber = 14, in binary 14 is written as 1110 and when we do bitwise left shift operation each bit is shifted the number of times specified<br>secondNumber<<2(shifted) two places towards left) == 56, where condition is true</p>`); 
+            document.writeln("value of secondNumber(14)<<2 = ", secondNumber<<2);
+        if(secondNumber<<2==56){
+            document.writeln(`<p>Condition true</p>`);  
+        }
+        else{
+            document.writeln(`<p>Condition false</p>`);
+        }
+        document.writeln(`<hr>`)
+          
+        document.writeln(`<h2>Bitwise Right Shift</h2>`)
+        document.writeln(`<p>here in this example 10, in binary 10 is written as 1010 and when we do bitwise right shift operation each bit is shifted the number of times specified<br>10>>2(shifted) two places towards right) where 10 becomes 2</p>`); 
+            document.writeln("value of 10>>2 = ", 10>>2);
+        if(10>>2==41){
+            document.writeln(`<p>Condition true</p>`);  
+        }
+        else{
+            document.writeln(`<p>Condition false</p>`);
+        }
+        document.writeln(`<hr>`)
+
+        document.writeln(`<h2>Bitwise Right Shift with Zero</h2>`)
+        document.writeln(`The unsigned right shift ( >>> ) operator returns a number whose binary representation is the first operand shifted by the specified number of bits to the right. Excess bits shifted off to the right are discarded, and zero bits are shifted in from the left.<br><br>`);
+            document.writeln("value of 5>>>2 = ", 5>>>2);
+        if(5>>>2==1){
+            document.writeln(`<p>Condition true</p>`);  
+        }
+        else{
+            document.writeln(`<p>Condition false</p>`);
+        }
+        document.writeln(`<hr>`)
+
+
+
+    </script>
+  </body>
+</html>

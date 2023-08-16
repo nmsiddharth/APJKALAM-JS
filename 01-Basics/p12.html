@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-BASICS</title>
+  </head>
+  <body>
+    <script>
+        document.write("<center><h1>Special Operators</h1></center><hr>");
+      let firstNumber = 59, secondNumber = 46, thirdNumber = 80, fourthNumber = 35;
+      document.writeln(`<h3>FirstNumber = ${firstNumber}, SecondNumber = ${secondNumber}, ThirdNumber = ${thirdNumber}, FourthNumber = ${fourthNumber}</h3><hr>`);
+      document.write("<h3>1] (?:)</h3>");
+      document.writeln(
+        firstNumber > 0
+          ? `firstNumber(${firstNumber}) is greater than 0`
+          : `firstNumber(${firstNumber}) is not greater than 0`
+      );
+      document.write("<hr>");
+
+      document.write("<h3>2] (,)</h3>");
+      secondNumber += 10, thirdNumber = firstNumber + 50;
+      document.write(`After performing operations using (,) SecondNumber = ${secondNumber} and ThirdNumber = ${thirdNumber}<hr>`);
+
+      document.write("<h3>3] delete</h3>");
+       console.log(delete fourthNumber);
+       let a = delete fourthNumber;
+      console.log(fourthNumber);
+      document.write(`After performing operations using delete FourthNumber = ${a}, ${fourthNumber}<hr>`);
+      
+      document.write("<h3>4] in</h3>");
+      function sid() {
+    const array = ['cat', 'dog',
+                'fish']
+     // Output of the indexed number           
+    document.writeln(0 in array,"<br>");
+    // Output of the Value
+    document.writeln('dog' in array,"<br>");
+     // output of the Array property
+    document.writeln('length' in array,"<br><hr>");
+    }
+    sid();
+    
+    document.write("<h3>5] instance of</h3>");
+    function Car(make, model, year) {
+  this.make = make;
+  this.model = model;
+  this.year = year;
+}
+const hyundai = new Car('Honda', 'Accord', 1998),renault=0;
+document.write(hyundai instanceof Car,"<br>");
+document.write(hyundai instanceof Object,"<br>");
+document.write(renault instanceof Car,"<br>");
+document.write(renault instanceof Object,"<br><hr>");
+
+document.write("<h3>6] new</h3>");
+function Place(bar1, bar2) {
+  this.bar1 = bar1;
+  this.bar2 = bar2;
+}
+const myPlace = new Place("Bar 1", 2021);
+document.write(myPlace.bar2,"<br><hr>");
+
+document.write("<h3>7] typeof</h3>");
+const animal = "Lion";
+document.write("<p>animal = Lion</p>");
+document.write(typeof(animal));
+document.write("<hr>");
+
+document.write("<h3>8] yield</h3>");
+document.write("<p>The yield operator is used to pause and resume a generator function.</p>");
+function* countAppleSales() {
+  const saleList = [3, 7, 5];
+  for (let i = 0; i < saleList.length; i++) {
+    yield saleList[i];
+  }
+}
+const appleStore = countAppleSales(); // Generator { }
+document.write(appleStore.next(),"<br>"); // { value: 3, done: false }
+document.write(appleStore.next(),"<br>"); // { value: 7, done: false }
+document.write(appleStore.next(),"<br>"); // { value: 5, done: false }
+document.write(appleStore.next(),"<br>"); // { value: undefined, done: true }
+
+console.log(appleStore.next()); // { value: 3, done: false }
+console.log(appleStore.next()); // { value: 7, done: false }
+console.log(appleStore.next()); // { value: 5, done: false }
+console.log(appleStore.next()); // { value: undefined, done: true }
+document.write("<hr>");
+
+document.write("<h3>9] void</h3>");
+void function testing() {
+    document.write("hello from testing function");
+    return 10;
+}
+testing();
+    </script>
+  </body>
+</html>
