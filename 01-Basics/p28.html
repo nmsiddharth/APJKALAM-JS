@@ -34,16 +34,20 @@
   </head>
   <body>
     <center>
-      <h1>Division Function</h1>
+      <h1>Simple Interest</h1>
     </center>
     <hr />
    <section class="banner">
-    <form onsubmit="divFunction(event)">
-        <label for="ip1">Enter First Value : </label>
+    <form onsubmit="siFunction(event)">
+        <label for="ip1">Principle : </label>
         <input type="number" id="ip1" />
         <br /><br />
-        <label for="ip2">Enter Second Value : </label>
+        <label for="ip2">Rate of Interest : </label>
         <input type="number" id="ip2" />
+        <br><br>
+        <label for="ip3">Time: </label>
+        <input type="number" id="ip3" />
+  
         <br><br>
         <label for="result">Output</label>
         <h3 id="result">  </h3>
@@ -53,13 +57,14 @@
    </section>
 
     <script>
-      function divFunction(event) {
+      function siFunction(event) {
         event.preventDefault();
-        let firstNumber = Number(document.getElementById("ip1").value);
-        let secondNumber = Number(document.getElementById("ip2").value);
-        let division = firstNumber / secondNumber;
+        let principle = Number(document.getElementById("ip1").value);
+        let Rate = Number(document.getElementById("ip2").value);
+        let time = Number(document.getElementById("ip3").value);
+        let SI = (principle*Rate*time)/100;
 
-        document.getElementById("result").innerHTML = division;
+        document.getElementById("result").innerHTML = SI;
         // return difference;
       }
       

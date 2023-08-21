@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS-BASICS</title>
     <style>
+        .banner{
+            background-color: lightgrey;
+            padding: 20px;
+        }
       h3 {
         width: 60px;
         border: 2px solid palegoldenrod;
@@ -21,6 +25,11 @@
       button{
         background-color: skyblue;
       }
+      button:hover{
+        transform: scale(1.5, 1.5);
+        color:chocolate;
+      }
+      
     </style>
   </head>
   <body>
@@ -28,18 +37,20 @@
       <h1>Modulus Function</h1>
     </center>
     <hr />
+  <section class="banner">
     <form onsubmit="modFunction(event)">
-      <label for="ip1">Enter First Value : </label>
-      <input type="number" id="ip1" />
-      <br /><br />
-      <label for="ip2">Enter Second Value : </label>
-      <input type="number" id="ip2" />
-      <br><br>
-      <label for="result">Output</label>
-      <h3 id="result">  </h3>
-      <br /><br />
-      <button type="submit">Execute</button>
-    </form>
+        <label for="ip1">Enter First Value : </label>
+        <input type="number" id="ip1" />
+        <br /><br />
+        <label for="ip2">Enter Second Value : </label>
+        <input type="number" id="ip2" />
+        <br><br>
+        <label for="result">Output</label>
+        <h3 id="result">  </h3>
+        <br /><br />
+        <button type="submit">Execute</button>
+      </form>
+  </section>
 
     <script>
       function modFunction(event) {

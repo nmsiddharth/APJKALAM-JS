@@ -5,23 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS-Basics</title>
     <style>
-        h3 {
-          width: 60px;
-          border: 2px solid palegoldenrod;
-          border-radius: 5px;
-          height: 25px;
+        .banner{
+            background-color: lightgrey;
+            padding: 20px;
         }
-       label{
-          background-color: gold;
-       }
-       label[for="result"]{
-          background-color: crimson;
-          color: antiquewhite;
-       }
-        button{
-          background-color: skyblue;
-        }
-      </style>
+      h3 {
+        width: 60px;
+        border: 2px solid palegoldenrod;
+        border-radius: 5px;
+        height: 25px;
+      }
+     label{
+        background-color: gold;
+     }
+     label[for="result"]{
+        background-color: crimson;
+        color: antiquewhite;
+     }
+      button{
+        background-color: skyblue;
+      }
+      button:hover{
+        transform: scale(1.5, 1.5);
+        color:chocolate;
+      }
+      
+    </style>
 </head>
 <body>
     <center>
@@ -30,24 +39,26 @@
     <hr>
     <h1>Addition</h1>
 
-    <form onsubmit="addFunction(event)">
+    <section class="banner">
+        <form onsubmit="addFunction(event)">
     
-    <label for="inp1">Enter the Num1</label>
-    <input type="number" name="a" id="inp1">
-    <br><br>
-    <label for="inp2">Enter the Num2</label>
-    <input type="number" name="b" id="inp2">
-        <br><br>
-        <label for="result">Output</label>
-        <h3 id="result"> </h3>
-
-    <button type="submit">Execute</button>
-        <br><br>
-    
-    
-    
-    
-    </form>
+            <label for="inp1">Enter the Num1</label>
+            <input type="number" name="a" id="inp1">
+            <br><br>
+            <label for="inp2">Enter the Num2</label>
+            <input type="number" name="b" id="inp2">
+                <br><br>
+                <label for="result">Output</label>
+                <h3 id="result"> </h3>
+        
+            <button type="submit">Execute</button>
+                <br><br>
+            
+            
+            
+            
+            </form>
+    </section>
     <script>
         function addFunction(event){
             event.preventDefault();
