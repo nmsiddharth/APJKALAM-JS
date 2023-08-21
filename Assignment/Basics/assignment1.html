@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largest of 2 numbers</title>
+</head>
+<body>
+    <center>
+        <h1>Largest of 2 Numbers</h1>
+    </center>
+    <hr>
+    <form onsubmit="largest(event)">
+        
+        <label for="inp1">Enter FirstNumber:</label>
+        <input type="number" name="a" id="inp1">
+        <br><br>
+        <label for="inp2">Enter secondNumber:</label>
+        <input type="number" name="b" id="inp2">
+        <br><br>
+        <button type="submit">Operation</button>
+        <br><br>
+        <div id="result"></div>
+       
+
+    </form>
+    <hr>
+    
+    <script>
+        function largest(event) {
+            event.preventDefault();
+       
+        let num1 = Number(document.getElementById("inp1").value);
+        let num2 = Number(document.getElementById("inp2").value);
+        let final = "";
+        // document.write (`First number: ${num1}`);
+        //     document.write (`Second number: ${num2}<hr>`);  doubt
+                
+        if(num1>num2){
+           
+            document.getElementById("result").innerHTML = `${num1} is largest number`;
+        }
+        else if(num2>num1){
+            document.getElementById("result").innerHTML =` ${num2} is largest number`;
+        }else if(num1==num2){
+            document.getElementById("result").innerHTML =` ${num1} is equal to ${num2}`;
+        }
+       
+        
+    }
+    </script>
+</body>
+</html>

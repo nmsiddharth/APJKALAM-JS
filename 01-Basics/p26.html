@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-BASICS</title>
+    <style>
+        h3 {
+          width: 60px;
+          border: 2px solid palegoldenrod;
+          border-radius: 5px;
+          height: 25px;
+        }
+       label{
+          background-color: gold;
+       }
+       label[for="result"]{
+          background-color: crimson;
+          color: antiquewhite;
+       }
+        button{
+          background-color: skyblue;
+        }
+      </style>
+  </head>
+  <body>
+    <center>
+      <h1>Division Function</h1>
+    </center>
+    <hr />
+    <form onsubmit="divFunction(event)">
+      <label for="ip1">Enter First Value : </label>
+      <input type="number" id="ip1" />
+      <br /><br />
+      <label for="ip2">Enter Second Value : </label>
+      <input type="number" id="ip2" />
+      <br><br>
+      <label for="result">Output</label>
+      <h3 id="result">  </h3>
+      <br /><br />
+      <button type="submit">Execute</button>
+    </form>
+
+    <script>
+      function divFunction(event) {
+        event.preventDefault();
+        let firstNumber = Number(document.getElementById("ip1").value);
+        let secondNumber = Number(document.getElementById("ip2").value);
+        let division = firstNumber / secondNumber;
+
+        document.getElementById("result").innerHTML = division;
+        // return difference;
+      }
+      
+    </script>
+  </body>
+</html>

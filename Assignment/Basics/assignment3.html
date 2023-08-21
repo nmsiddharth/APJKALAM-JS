@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positive or Negative Number</title>
+</head>
+<body>
+    <center>
+        <h1>Given Number is positive or Negative</h1>
+    </center>
+    <hr>
+    <form onsubmit="sign(event)">
+    
+        <label for="inp1">Enter the Number : </label>
+        <input type="number" id="inp1" name="a">
+        <br><br>
+        
+        <button type="submit">Execute</button>
+        <br><br>
+        <div id="result"></div>
+        <hr>
+        <br><br>
+    </form>
+    <script>
+    function sign(event) {
+        event.preventDefault();
+        let num = document.getElementById("inp1").value;
+
+       
+            if( num>0 ){
+                document.getElementById("result").innerHTML= `${num} is Positive number`;
+            }
+            else{
+                document.getElementById("result").innerHTML= `${num} is Negative number`;
+            }
+        }
+    </script>
+</body>
+</html>

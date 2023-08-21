@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Basics</title>
+    <style>
+        h3 {
+          width: 60px;
+          border: 2px solid palegoldenrod;
+          border-radius: 5px;
+          height: 25px;
+        }
+       label{
+          background-color: gold;
+       }
+       label[for="result"]{
+          background-color: crimson;
+          color: antiquewhite;
+       }
+        button{
+          background-color: skyblue;
+        }
+      </style>
+</head>
+<body>
+    <center>
+        <h1> Without Parameter, with Return Value Example:</h1>
+    </center>
+    <hr>
+    <h1>Addition</h1>
+
+    <form onsubmit="addFunction(event)">
+    
+    <label for="inp1">Enter the Num1</label>
+    <input type="number" name="a" id="inp1">
+    <br><br>
+    <label for="inp2">Enter the Num2</label>
+    <input type="number" name="b" id="inp2">
+        <br><br>
+        <label for="result">Output</label>
+        <h3 id="result"> </h3>
+
+    <button type="submit">Execute</button>
+        <br><br>
+    
+    
+    
+    
+    </form>
+    <script>
+        function addFunction(event){
+            event.preventDefault();
+            let num1 = Number(document.getElementById("inp1").value);
+             let num2 = Number(document.getElementById("inp2").value);
+            let sum = num1 + num2;
+            document.getElementById("result").innerHTML = `Sum: ${sum}`;
+           // return sum;
+            // document.write(`<p><b>SUM</b> : ${sum}</p>`);
+        }
+        //  addFunction(event);
+        //document.getElementById("result" ) = `<p><b>SUM</b> : ${addFunction()}</p>`;
+    </script>
+</body>
+</html>

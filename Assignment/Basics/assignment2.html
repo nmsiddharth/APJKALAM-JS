@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largest of 3 numbers</title>
+</head>
+<body>
+    <center>
+        <h1>Largest of 3 Numbers</h1>
+    </center>
+    <hr>
+
+    <form onsubmit="largest(event)">
+    
+    <label for="inp1">First Number</label>
+    <input type="number" id="inp1" name="a">
+    <br><br>
+    
+    <label for="inp2">Second Number</label>
+    <input type="number" name="b" id="inp2">
+    <br><br>
+    <label for="inp3">Third Number</label>
+    <input type="number" name="c" id="inp3">
+    <br><br>
+    <button type="submit">Execute</button>
+<hr>
+<br><br>
+    <div id="result"></div>
+    </form>
+   
+
+    <script>
+
+        function largest(event) {
+            event.preventDefault();
+
+        let num1 = document.getElementById("inp1").value;
+        let num2 = document.getElementById("inp2").value;
+        let num3 = document.getElementById("inp3").value;
+
+
+                    if(num1>num2 && num1>num3) {
+                       document.getElementById("result").innerHTML= `${num1} is largest number`;
+                    }
+                    else if(num2>num1 && num2>num3) { 
+                        document.getElementById("result").innerHTML= `${num2} is largest number`;
+                    }
+                    else{
+                        document.getElementById("result").innerHTML= `${num2} is largest number`;
+                    }
+                }
+    </script>
+</body>
+</html>

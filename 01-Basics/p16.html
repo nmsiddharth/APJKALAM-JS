@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-BASICS</title>
+    <style>
+        caption{
+            font-size: 40px;
+            text-align: center;
+        }
+        table{
+            border: 1px solid rgb(27, 25, 26);
+            padding: 40px;
+            border-collapse: collapse;
+            width: 50%;
+            height: 100%;
+            margin: auto;
+        }
+        th, td{
+            border: 1px solid rgb(27, 25, 26);
+            text-align: center;
+            padding: 0px;
+        }
+        input[type="number"]{
+            padding:8px;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        button{
+            margin-right: 0px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>
+            marks = 70-100(A), 50-70(B), 35-50(c), ==35(D), Fail
+        </h1>
+        <hr>
+        <u>
+            <h2>
+                Enter marks of all 6 subjects
+            </h2>
+        </u>
+        </center>
+        <form onsubmit="gradeCard(event)">
+    <table>
+     <caption><b>Gradecard</b></caption>
+     <tr>
+        <th>
+              Sl.no
+        </th>
+        <th>
+            Subject
+      </th>
+      <th>
+        Max Marks
+  </th>
+  <th>
+    Marks Scored
+</th>
+<th>
+    Grade
+</th>
+     </tr>
+
+     <tr>
+        <td>
+            1
+        </td>
+        <td>
+            Kannada
+        </td>
+        <td>
+            100
+        </td>
+        <td>
+            <input type="number" name="kannada" id="kannada" required />
+        </td>
+        <td id="1">
+
+        </td>
+        </tr>
+     <tr>
+        <td>
+            2
+        </td>
+        <td>
+            English
+         </td>
+         <td>
+            100
+        </td>
+        <td>
+            <input type="number" name="english" id="english" required />
+        </td>
+        <td id="2">
+
+        </td>
+     </tr>
+     <tr>
+        <td>
+            3
+        </td>
+        <td>
+            Hindi
+        </td>
+        <td>
+            100
+        </td>
+        <td>
+            <input type="number" name="hindi" id="hindi" required />
+        </td>
+        <td id="3">
+
+        </td>
+     </tr>
+     <tr>
+        <td>
+            4
+        </td>
+        <td>
+            Maths
+        </td>
+        <td>
+            100
+        </td>
+        <td>
+            <input type="number" name="maths" id="maths" required />
+        </td>
+        <td id="4">
+
+        </td>
+     </tr>
+     <tr>
+        <td>
+            5
+        </td>
+        <td>
+            Science
+        </td>
+        <td>
+            100
+        </td>
+        <td>
+            <input type="number" name="science" id="science" required />
+        </td>
+        <td id="5">
+
+        </td>
+     </tr>
+     <tr>
+        <td>
+            6
+        </td>
+        <td>
+            Social Studies
+        </td>
+        <td>
+            100
+        </td>
+        <td>
+            <input type="number" name="social" id="social" required />
+        </td>
+        <td id="6">
+
+        </td>
+     </tr>
+     <tr>
+        <td colspan="2">
+           Total
+        </td>
+        <td>
+            600
+        </td>
+        <td id="totalMarks">
+
+        </td>
+        <td id="percentage">
+
+        </td>
+     </tr>
+    </table>
+    <br>
+    <center>
+        <button type="submit">
+        Submit
+    </button>
+</center>
+    
+   </form>
+<script>
+ function gradeCard(event){
+    event.preventDefault();
+    var one = Number(document.getElementById("kannada").value);
+    var two = Number(document.getElementById("english").value);
+    var three = Number(document.getElementById("hindi").value);
+    var four = Number(document.getElementById("maths").value);
+    var five = Number(document.getElementById("science").value);
+    var six = Number(document.getElementById("social").value);
+   let totalMarks = one + two + three + four + five + six;
+   let percentage = (totalMarks*100)/600
+   document.getElementById("totalMarks").innerHTML = totalMarks;
+   document.getElementById("percentage").innerHTML = `${percentage}%`;
+   let marksArray = [one, two, three, four, five, six]; 
+   for (let i = 0; i < 6; i++) {
+              
+
+                if (marksArray[i] >= 70 && marksArray[i] <= 100) {
+                    grade = "A";
+                } else if (marksArray[i] >= 50 && marksArray[i] < 70) {
+                    grade = "B";
+                } else if (marksArray[i] > 35 && marksArray[i] < 50) {
+                    grade = "C";
+                } else if (marksArray[i] == 35) {
+                    grade = "D";
+                } else if(marksArray[i]>=0 && marksArray[i]<35) {
+                    grade = "F";
+                }
+                document.getElementById(i+1).innerHTML = grade;
+            }
+ }
+</script>
+</body>
+</html>
