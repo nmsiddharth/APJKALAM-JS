@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Half _ Pyramid</title>
+    <title>JS</title>
 </head>
 <body>
     <script>
-    
-        for(let i=1;i=5;i++) {
-            for(let j=1;j<=i;j++) {
-                document.write(j+ " ");
+        let k=8
+        for(let i=1;i<=k;i++) {
+            for(let j=1;j<=k;j++) {
+                if(i==1 || j==1 || i==k || j==k){
+                    document.write(" * ")
+                }else{
+                    document.write("&nbsp;&nbsp; ");
+                }
             }
             document.write("<br>");
         }
