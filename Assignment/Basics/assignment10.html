@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ODD or Even</title>
+</head>
+<body>
+    <center>
+        <h1>Odd or Even</h1>
+    </center>
+    <hr>
+
+    <form onsubmit="oddEven(event)">
+        
+        <label for="inp">Enter the Number </label>
+        <input type="number" id="inp" name="a">
+        <br><br>
+        <button type="submit">Execute</button>
+        <br><br>
+        <hr>
+        <div id="result"></div>    
+    </form>
+
+    <script>
+        function oddEven(event) {
+            event.preventDefault();
+
+            let num= Number(document.getElementById("inp").value);
+
+            if(num%2==0){
+                document.getElementById("result").innerHTML = `<h3>${num} is Even Number</h3>`;
+            }else{
+                document.getElementById("result").innerHTML=`<h3>${num} is Odd number</h3>` ;
+            }
+        }
+    </script>
+</body>
+</html>

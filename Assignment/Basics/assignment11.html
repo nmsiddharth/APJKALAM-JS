@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Triangle is whether Equilateral ,Scalene, or Isosceles</title>
+</head>
+<body>
+    <center>
+        <h1>Check Triangle is whether Equilateral ,Scalene, or Isosceles</h1>
+    </center>
+    <hr>
+    <form onsubmit="triangle(event)">
+    
+    <label for="inp1">Enter 1st side:</label>
+    <input type="number" name="a" id="inp1">
+    <br><br>
+    <label for="inp2">Enter 2nd side:</label>
+    <input type="number" name="b" id="inp2">
+    <br><br>
+    <label for="inp3">Enter 3rd side:</label>
+    <input type="number" name="c" id="inp3">
+    <br><br>
+    <button type="submit">Execute</button>
+    <br><br>
+    <hr>
+    <div id="result"></div>  
+    </form>
+    <script>
+        function triangle(event){
+            event.preventDefault();
+
+            let side1 = Number(document.getElementById("inp1").value);
+            let side2 = Number(document.getElementById("inp2").value);
+            let side3 = Number(document.getElementById("inp3").value);
+
+            if((side1==side2) && (side2==side3)){
+                document.getElementById("result").innerHTML=`<h3>Triangle is a Equilateral Triangle</h3>`;
+            }else if((side1==side2) || (side2==side3) || (side3==side1)){
+                document.getElementById("result").innerHTML=`<h3>Triangle is an Isosceles Triangle</h3>` ;
+            }else{
+                document.getElementById("result").innerHTML=`<h3>Triangle is an Scalene Triangle</h3>` ;
+            }
+        }
+    </script>
+</body>
+</html>

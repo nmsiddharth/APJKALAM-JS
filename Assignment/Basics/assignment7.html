@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Number</title>
+</head>
+<body>
+    <center>
+        <h1>Palindrome Number</h1>
+    </center>
+    <hr>
+    <form onsubmit="palindrome(event)">
+        <label for="inp">Enter the number</label>
+        <input type="number" name="a" id="inp">
+        <br><br>
+        <button type="submit">Execute</button>
+        <br><br>
+        <hr>
+
+        <div id="result"></div>
+        
+     </form>
+    <script>
+        function palindrome(event){
+            event.preventDefault();
+
+            let num = Number(document.getElementById("inp").value);
+            let remainder;
+            let rev=0;
+            let q = num;
+           
+
+            while(q!=0){
+                remainder = q % 10;
+                rev = rev * 10 + remainder;
+                q=Math.floor(q / 10);
+            }
+            if(num==rev){
+              document.getElementById("result").innerHTML= `<h3>${num} is  a palindrome number</h3>`
+              
+            }else{
+                document.getElementById("result").innerHTML= `<h3>${num} is not a palindrome number</h3>`
+            }
+        }
+    </script>
+</body>
+</html>

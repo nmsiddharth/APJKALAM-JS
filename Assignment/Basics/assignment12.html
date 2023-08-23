@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character is Alphabet or Not</title>
+</head>
+<body>
+    <center>
+        <h1>Character is Alphabet or Not</h1>
+    </center>
+    <hr>
+    <form onsubmit="alpha(event)">
+    
+    <label for="inp">Enter the Character</label>
+    <input type="text" name="a" id="inp">
+    <br><br>
+    <button type="submit">Execute</button>
+    <br><br>
+    <hr>
+    <div id="result"></div>
+    </form>
+
+    <script>
+        function alpha(event){
+            event.preventDefault();
+
+            let charc = document.getElementById("inp").value;
+
+            if(((charc>='a') && (charc<=z)) || ((charc>='A') && (charc<='Z'))) {
+                document.getElementById("result").innerHTML= `<h3>${charc}  is Alphabet character</h3>`;
+            }else{
+                document.getElementById("result").innerHTML= `<h3>${charc} is not  Alphabet</h3>`;
+            }
+        }
+    </script>
+</body>
+</html>

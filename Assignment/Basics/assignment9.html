@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>  Celsius to Fahrenheit </title>
+</head>
+<body>
+    <center>
+        <h1> Celsius to Fahrenheit</h1>
+    </center>
+    <hr>
+    <form onsubmit="Cf(event)">
+        <label for="inp">Enter the Celsius temperature</label>
+        <input type="number" name="a" id="inp">
+        <br><br>
+        <button type="submit">Execute</button>
+        <br><br>
+        <hr>
+
+        <div id="result"></div>
+        
+     </form>
+    <script>
+        function Cf(event){
+            event.preventDefault();
+
+           let celsius = Number(document.getElementById("inp").value);
+          
+
+           let Fahrenheit = (9/5)*celsius+32;
+           document.getElementById("result").innerHTML=`<h3>Fahrenheit temperature is ${Fahrenheit} °F</h3>`;
+
+
+        }
+    </script>
+</body>
+</html>

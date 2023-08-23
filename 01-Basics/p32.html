@@ -7,7 +7,23 @@
 </head>
 <body>
     <center>
-        <h1>Call Back Function</h1>
+        <h1>CALL BACK FUNCTIONS</h1>
     </center>
+    <hr>
+    <script>
+        function howAreYou(question, yes, no){
+            if(confirm(question)){
+                yes();
+            }else{
+                no();
+            }
+
+        }
+        howAreYou(
+            "How Are You?",
+            function(){document.write(`<p>This is SECOND parameter value, GOOD</p>`)},
+            function(){document.write(`<p>This is THIRD parameter value, BAD</p>`)},
+        );
+    </script>
 </body>
 </html>

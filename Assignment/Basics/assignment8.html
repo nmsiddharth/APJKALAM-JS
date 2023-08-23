@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fahrenheit to Celsius</title>
+</head>
+<body>
+    <center>
+        <h1>Fahrenheit to Celsius</h1>
+    </center>
+    <hr>
+    <form onsubmit="Fc(event)">
+        <label for="inp">Enter the Fahrenheit temperature</label>
+        <input type="number" name="a" id="inp">
+        <br><br>
+        <button type="submit">Execute</button>
+        <br><br>
+        <hr>
+
+        <div id="result"></div>
+        
+     </form>
+    <script>
+        function Fc(event){
+            event.preventDefault();
+
+           let Fahren = Number(document.getElementById("inp").value);
+          
+
+           let celsius = 5/9*(Fahren-32);
+           document.getElementById("result").innerHTML=`<h3>Celsius temperature is ${celsius} °C</h3>`;
+
+
+        }
+    </script>
+</body>
+</html>

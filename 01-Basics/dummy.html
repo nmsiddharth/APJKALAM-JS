@@ -7,17 +7,18 @@
 </head>
 <body>
     <script>
-        let k=8
-        for(let i=1;i<=k;i++) {
-            for(let j=1;j<=k;j++) {
-                if(i==1 || j==1 || i==k || j==k){
-                    document.write(" * ")
-                }else{
-                    document.write("&nbsp;&nbsp; ");
-                }
+        function hii(question,yes,no){
+            if(confirm(question)){
+                yes();
+            }else{
+                no();
             }
-            document.write("<br>");
+
+
+
+
         }
+        hii("what is fav color",function(){document.write("red")},function(){document.write("Pink")})
     </script>
 </body>
 </html>
