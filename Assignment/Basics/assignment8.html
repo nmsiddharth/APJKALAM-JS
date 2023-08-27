@@ -4,23 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fahrenheit to Celsius</title>
+    <style>
+        .banner{
+            background: url(../Basics/assets/images/image8.jpg)no-repeat center;
+            background-size: 100%;
+            border-radius: 50px;
+            padding: 20px;
+            padding-bottom: 180px;
+            margin-top: 20px;
+        }
+        #form{
+            border: 2px solid transparent;
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            width: 60%;
+            margin: auto;
+            margin-top: 7%;
+        }
+        .input1{
+          
+            padding: 10px;
+            font-size: 25px;
+            font-weight: bold;
+            color:rgb(4, 255, 25);
+            margin-left: 100px;
+            border-radius: 30px;
+            width: 70%;
+        }
+        input{
+            background-color:transparent;
+            color: rgb(212, 219, 12);
+            font-size: 20px;
+            border: 2px solid yellow;
+            border-radius: 10px;
+            width: 20%;
+        }
+        button{
+            background-color: rgb(240, 238, 234);
+            color: black;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            font-size: 17px;
+            margin-left: 40%;
+            margin-top: 7%;
+        }
+        button:hover{
+            transform: scale(1.5,1.5);
+            background-color: red;
+        }
+        #result{
+            background-color:rgba(2, 36, 69, 0.7);
+            margin: auto;
+            width: 30%;
+            padding: 30px;
+            color:yellow;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 20px;
+            margin-top: 60px;
+        }
+        h1{
+            background-color: rgba(14, 225, 14, 0.5);
+            color: rgb(255, 255, 255);
+            width: 30%;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 40px;
+            margin-left: 2%;
+        }
+    </style>
 </head>
 <body>
+   
+  <section class="banner">
     <center>
         <h1>Fahrenheit to Celsius</h1>
     </center>
-    <hr>
-    <form onsubmit="Fc(event)">
-        <label for="inp">Enter the Fahrenheit temperature</label>
-        <input type="number" name="a" id="inp">
-        <br><br>
-        <button type="submit">Execute</button>
-        <br><br>
-        <hr>
+    <form onsubmit="Fc(event)" id="form">
+      <div class="input1">  <label for="inp">Enter the Fahrenheit temperature :</label>
+        <input type="number" name="a" id="inp"></div>
+      
+      <div>  <button type="submit">Execute</button></div>
+      
 
         <div id="result"></div>
         
-     </form>
+     </form></section>
     <script>
         function Fc(event){
             event.preventDefault();

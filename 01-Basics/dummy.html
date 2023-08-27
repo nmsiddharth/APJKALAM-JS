@@ -3,22 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS</title>
+    <title>Document</title>
 </head>
 <body>
+    <h1>Rem of 2 numbers</h1>
+    <button onclick="submitHandler()"     >Calc</button>
+    <div id="result"></div>
     <script>
-        function hii(question,yes,no){
-            if(confirm(question)){
-                yes();
-            }else{
-                no();
-            }
-
-
-
-
-        }
-        hii("what is fav color",function(){document.write("red")},function(){document.write("Pink")})
+        let x = prompt("Inp1");
+        let y = prompt("Inp2");
+        let res = Number(x) % Number(y);
+        document.getElementById("result").innerHTML="<h3> Rem of x%y = " + res + "</h3>"
     </script>
 </body>
 </html>

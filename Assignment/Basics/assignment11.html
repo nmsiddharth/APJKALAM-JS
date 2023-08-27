@@ -4,28 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Check Triangle is whether Equilateral ,Scalene, or Isosceles</title>
+    <style>
+         .banner{
+            background: url(../Basics/assets/images/image11.jpg)no-repeat center;
+            background-size: 100%;
+            border-radius: 50px;
+            padding: 20px;
+            padding-bottom: 180px;
+            margin-top: 20px;
+        }
+        #form{
+            background-color: rgba(250, 235, 215,0.1);
+            border: 2px solid transparent;
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            width: 60%;
+            margin: auto;
+            margin-top: 7%;
+        }
+        .input1{
+          
+          padding: 10px;
+          font-size: 25px;
+          font-weight: bold;
+          color:rgb(23, 164, 207);
+          margin-left: 200px;
+          border-radius: 30px;
+          width: 70%;
+      }
+      .input2{
+          
+          padding: 10px;
+          font-size: 25px;
+          font-weight: bold;
+          color:rgb(23, 164, 207);
+          margin-left: 200px;
+          border-radius: 30px;
+          width: 70%;
+      }
+      .input3{
+          
+          padding: 10px;
+          font-size: 25px;
+          font-weight: bold;
+          color:rgb(23, 164, 207);
+          margin-left: 200px;
+          border-radius: 30px;
+          width: 70%;
+      }
+      input{
+          background-color:transparent;
+          color: rgb(238, 239, 233);
+          font-size: 20px;
+          border: 2px solid rgb(240, 240, 240);
+          border-radius: 10px;
+          width: 20%;
+      }
+      button{
+          background-color: rgb(240, 238, 234);
+          color: black;
+          border-radius: 20px;
+          border: 1px solid transparent;
+          font-size: 17px;
+          margin-left: 40%;
+          margin-top: 7%;
+      }
+      button:hover{
+          transform: scale(1.5,1.5);
+          background-color: rgb(27, 25, 25);
+          color: azure;
+      }
+      #result{
+          background-color:rgba(239, 243, 247, 0.7);
+          margin: auto;
+          width: 30%;
+          padding: 30px;
+          color:rgb(255, 0, 30);
+          font-size: 20px;
+          font-weight: bold;
+          text-align: center;
+          border-radius: 20px;
+          margin-top: 60px;
+          margin-left: 28%;
+      }
+      h1{
+          background-color: rgba(225, 148, 14, 0.5);
+          color: rgb(255, 255, 255);
+          width: 80%;
+          border-radius: 10px;
+          text-align: center;
+          font-size: 40px;
+          margin-left: 1%;
+      }
+    </style>
 </head>
 <body>
+   <section class="banner">
     <center>
         <h1>Check Triangle is whether Equilateral ,Scalene, or Isosceles</h1>
     </center>
-    <hr>
-    <form onsubmit="triangle(event)">
+   
+    <form onsubmit="triangle(event)" id="form">
     
-    <label for="inp1">Enter 1st side:</label>
-    <input type="number" name="a" id="inp1">
-    <br><br>
-    <label for="inp2">Enter 2nd side:</label>
+  <div class="input1">  <label for="inp1">Enter 1st side:</label>
+    <input type="number" name="a" id="inp1"></div>
+  
+    <div class="input2">
+        <label for="inp2">Enter 2nd side:</label>
     <input type="number" name="b" id="inp2">
-    <br><br>
+    </div>
+   
+   <div class="input3">
     <label for="inp3">Enter 3rd side:</label>
     <input type="number" name="c" id="inp3">
-    <br><br>
+   </div>
+    
+   <div>
     <button type="submit">Execute</button>
-    <br><br>
-    <hr>
+   </div>
+    
     <div id="result"></div>  
     </form>
+   </section>
     <script>
         function triangle(event){
             event.preventDefault();

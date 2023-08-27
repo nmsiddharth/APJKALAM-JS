@@ -4,23 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ODD or Even</title>
+    <style>
+         .banner{
+            background: url(../Basics/assets/images/image10.jpg)no-repeat center;
+            background-size: 100%;
+            border-radius: 50px;
+            padding: 20px;
+            padding-bottom: 180px;
+            margin-top: 20px;
+        }
+        #form{
+            border: 2px solid transparent;
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            width: 60%;
+            margin: auto;
+            margin-top: 7%;
+        }
+        .input1{
+          
+          padding: 10px;
+          font-size: 25px;
+          font-weight: bold;
+          color:rgb(255, 4, 146);
+          margin-left: 200px;
+          border-radius: 30px;
+          width: 70%;
+      }
+      input{
+          background-color:transparent;
+          color: rgb(238, 239, 233);
+          font-size: 20px;
+          border: 2px solid yellow;
+          border-radius: 10px;
+          width: 20%;
+      }
+      button{
+          background-color: rgb(240, 238, 234);
+          color: black;
+          border-radius: 20px;
+          border: 1px solid transparent;
+          font-size: 17px;
+          margin-left: 40%;
+          margin-top: 7%;
+      }
+      button:hover{
+          transform: scale(1.5,1.5);
+          background-color: rgb(27, 25, 25);
+          color: azure;
+      }
+      #result{
+          background-color:rgba(239, 243, 247, 0.7);
+          margin: auto;
+          width: 30%;
+          padding: 30px;
+          color:rgb(255, 0, 30);
+          font-size: 20px;
+          font-weight: bold;
+          text-align: center;
+          border-radius: 20px;
+          margin-top: 60px;
+          margin-left: 28%;
+      }
+      h1{
+          /* background-color: rgba(207, 225, 14, 0.5); */
+          color: rgb(255, 255, 255);
+          width: 30%;
+          border-radius: 10px;
+          text-align: center;
+          font-size: 40px;
+          margin-left: 1%;
+      }
+    </style>
 </head>
 <body>
+   <section class="banner">
     <center>
         <h1>Odd or Even</h1>
     </center>
-    <hr>
+ 
 
-    <form onsubmit="oddEven(event)">
-        
-        <label for="inp">Enter the Number </label>
+    <form onsubmit="oddEven(event)" id="form">
+       <div class="input1">
+         
+        <label for="inp">Enter the Number : </label>
         <input type="number" id="inp" name="a">
-        <br><br>
-        <button type="submit">Execute</button>
-        <br><br>
-        <hr>
+       </div>
+        
+       <div> <button type="submit">Execute</button></div>
+       
         <div id="result"></div>    
     </form>
+   </section>
 
     <script>
         function oddEven(event) {

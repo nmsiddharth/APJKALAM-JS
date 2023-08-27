@@ -4,27 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Largest of 2 numbers</title>
+    <style>
+
+        .banner{
+            background: linear-gradient(rgba(156, 113, 85, 0.4),rgba(211, 152, 112, 0.4)), url(../Basics/assets/images/image1.jpg)no-repeat center;
+            background-size: 100%;
+            padding: 20px;
+            height: 100%;
+            margin-top: 8%;
+        }
+        #form{
+            background-color:transparent;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            width: 40%;
+            margin: auto;
+        }
+        .input1,.input2{
+            padding: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color:rgb(12, 3, 132);
+        }
+        button{
+            background-color: rgb(83, 141, 164);
+            color: black;
+            border-radius: 5px;
+            border: 1px solid transparent;
+            font-size: 16px;
+            margin-left: 40%;
+        }
+        button:hover{
+            transform: scale(1.5,1.5);
+        }
+        #result{
+            background-color:lightblue;
+            margin: auto;
+            width: 15%;
+            padding: 30px;
+            color: blueviolet;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px;
+        }
+        input{
+            background-color:darkgray;
+            color: cornsilk;
+            font-size: 15px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+        }
+        h1{
+           background-color: crimson;
+            color: white;
+            width: 20%;
+            border-radius: 10px;
+        }
+
+    </style>
 </head>
 <body>
+   
+  <section class="banner">
     <center>
         <h1>Largest of 2 Numbers</h1>
     </center>
-    <hr>
-    <form onsubmit="largest(event)">
-        
-        <label for="inp1">Enter FirstNumber:</label>
-        <input type="number" name="a" id="inp1">
-        <br><br>
-        <label for="inp2">Enter secondNumber:</label>
-        <input type="number" name="b" id="inp2">
-        <br><br>
-        <button type="submit">Operation</button>
-        <br><br>
-        <div id="result"></div>
-       
-
-    </form>
-    <hr>
+     
+    <form onsubmit="largest(event)" id="form">
+        <div class="input1"> 
+         <label for="inp1">Enter FirstNumber:</label>
+         <input type="number" name="a" id="inp1">
+        </div>
+         <br><br>
+         <div class="input2">
+             <label for="inp2">Enter SecondNumber:</label>
+         <input type="number" name="b" id="inp2">
+         </div>
+         <br><br>
+       <div>  <button type="submit">Operation</button></div>
+         <br><br>
+     </form>
+     <div id="result"></div>
+  </section>
+    
     
     <script>
         function largest(event) {

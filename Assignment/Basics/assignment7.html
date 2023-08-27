@@ -4,23 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Palindrome Number</title>
+    <style>
+        .banner{
+            background: url(../Basics/assets/images/image7.2.jpg)no-repeat center;
+            background-size: 100%;
+            border-radius: 50px;
+            padding: 20px;
+            padding-bottom: 180px;
+            margin-top: 20px;
+        }
+        #form{
+            /* background: linear-gradient(rgba(255, 255, 255,0.5),rgba(135, 206, 235,0.6)); */
+            border: 2px solid transparent;
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            width: 60%;
+            margin: auto;
+            margin-top: 7%;
+        }
+        .input1{
+            background-color: rgba(222, 251, 5, 0.9);
+            padding: 10px;
+            font-size: 30px;
+            font-weight: bold;
+            color:rgb(23, 23, 23);
+            margin-left: 100px;
+            border-radius: 30px;
+            width: 70%;
+        }
+        input{
+            background-color:transparent;
+            color: crimson;
+            font-size: 20px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+        }
+        button{
+            background-color: rgb(240, 238, 234);
+            color: black;
+            border-radius: 20px;
+            border: 1px solid transparent;
+            font-size: 17px;
+            margin-left: 40%;
+            margin-top: 7%;
+        }
+        button:hover{
+            transform: scale(1.5,1.5);
+        }
+        #result{
+            /* background-color:rgba(235, 229, 234, 0.1); */
+            margin: auto;
+            width: 55%;
+            padding: 30px;
+            color:yellow;
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 20px;
+            margin-top: 60px;
+        }
+        h1{
+            background-color: rgba(16, 17, 16, 0.5);
+            color: rgb(255, 255, 255);
+            width: 30%;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 40px;
+            margin-left: 35%;
+        }
+    </style>
 </head>
 <body>
+   <section class="banner"
     <center>
         <h1>Palindrome Number</h1>
     </center>
-    <hr>
-    <form onsubmit="palindrome(event)">
-        <label for="inp">Enter the number</label>
+   
+    <form onsubmit="palindrome(event)" id="form">
+       <div class="input1">
+        <label for="inp">Enter the number :</label>
         <input type="number" name="a" id="inp">
-        <br><br>
+       </div>
+       
+       <div>
         <button type="submit">Execute</button>
-        <br><br>
-        <hr>
+       </div>
+    </form>
 
         <div id="result"></div>
         
-     </form>
+   
+   </section>
     <script>
         function palindrome(event){
             event.preventDefault();
@@ -37,10 +113,10 @@
                 q=Math.floor(q / 10);
             }
             if(num==rev){
-              document.getElementById("result").innerHTML= `<h3>${num} is  a palindrome number</h3>`
+              document.getElementById("result").innerHTML= `<h3>${num} is  a Palindrome Number</h3>`
               
             }else{
-                document.getElementById("result").innerHTML= `<h3>${num} is not a palindrome number</h3>`
+                document.getElementById("result").innerHTML= `<h3>${num} is not a Palindrome Number</h3>`
             }
         }
     </script>
