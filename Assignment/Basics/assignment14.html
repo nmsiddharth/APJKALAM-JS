@@ -130,7 +130,7 @@
 
             while(num!=0){
                 remainder = num % 10;
-                sum = sum + Math.pow(remainder,count);
+                sum = sum + remainder**count;
                 num=Math.floor(num / 10);
             }
             if(q==sum){

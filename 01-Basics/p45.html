@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-BASICS</title>
+</head>
+<body>
+    <center>
+        <h1>Array using Parameter</h1>
+    </center>
+    <hr>
+    <script>
+        var x = new Array();
+        document.write(`<p> X is : ${typeof(x)}</p>`);
+
+        x[0] = "Blue";
+        x[1] = "Red";
+        x[2] = "Green";
+        x[3] = "Yellow";
+
+        document.write(`<h3>${x}</h3>`);
+        for(i=0;i<x.length;i++){
+            document.write(`<h3 style='color:Crimson;''>${x[i]}</h3>`)
+        }
+            i=0;
+        while(i<x.length){
+            document.write(`<h3 style='color:Crimson;''>${x[i]}</h3>`);
+            i++;
+        }
+        i=0;
+        do{
+            document.write(`<h3 style='color:Crimson;''>${x[i]}</h3>`);
+            i++;
+        }  while(i<x.length);
+
+
+
+                        // forEach method
+
+        /*        array.forEach(function(param){
+                 param => index
+              });
+     */    
+
+              x.forEach(function(item){
+                document.write(`<h3>${item}</h3>`);
+              });
+
+</script>
+</body>
+</html>
