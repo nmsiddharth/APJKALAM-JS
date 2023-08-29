@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-BASICS</title>
+</head>
+<body>
+    <center>
+        <h1>Object Array</h1>
+    </center>
+    <hr>
+    <script>
+        let users = [
+            {
+                id:1,
+                name:"Sid",
+                age:20
+            },
+            {
+                id:2,
+                name:"rocky",
+                age:33
+            },
+            {
+                id:3,
+                name:"Messi",
+                age:23
+            }
+        ];
+
+        document.write(`<p>users = ${users}</p>`);
+        document.write(`<p>users[0] = ${users[0]}</p>`);
+        document.write(`<p>users.id = ${users.id}</p>`);
+        document.write(`<p>users[0].id = ${users[0].id}</p>`);
+        document.write(`<p>users[1].id = ${users[1].id}</p>`);
+        document.write(`<p>users[2].id = ${users[2].id}</p><br><hr>`);
+
+        document.write(`<p>users[0].email = ${users[0].id}</p>`);
+        document.write(`<p>users[0].name = ${users[0].name}</p>`);
+        document.write(`<p>users[0].age = ${users[0].age}</p>`);
+
+        for(i=0;i<users.length;i++){
+            document.write(`<h3> id = ${users[i].id}<h3>`);
+                document.write(`<h3> name = ${users[i].name}<h3>`);
+                    document.write(`<h3> age = ${users[i].age}<h3>`);
+        }
+
+        document.write("<hr>");
+        document.write("<h2> Example 1</h2>");
+
+        users.forEach(element => {
+            document.write(element,"<br>");
+            document.write(element.id,"<br>");
+            document.write(element.name,"<br>");
+            document.write(element.age,"<br>");
+        });
+         
+        document.write("<h2> Example 2 </h2>");
+
+        users.forEach(function(items){
+            document.write(items,"<br>");
+            document.write(items.id,"<br>");
+            document.write(items.name,"<br>");
+            document.write(items.age,"<br>");
+        });
+    </script>
+</body>
+</html>
