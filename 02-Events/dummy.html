@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS-EVENT</title>
+    <style>
+      #video {
+        height: 400px;
+        width: 500px; 
+        border: 1px solid black;     
+    }
+    h3{
+        color:#f26c79 ;
+        background-color: aqua;
+        padding: 10px;
+    }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>Media Events</h1>
+    </center>
+      <hr />
+      <h3 id="output">
+
+      </h3>
+      <video src="assets/media/v1.mp4" id="video" controls onplay="play()" onpause="pause()" onvolumechange="volchange()" onseeking="seek()">
+
+      </video>
+
+
+    <script>
+      function play() {
+        let element = document.getElementById("video");
+        document.getElementById("output").innerHTML = element.play + "Video is Playing";
+      }
+      function pause() {
+        let element = document.getElementById("video");
+        document.getElementById("output").innerHTML = element + "Video is Paused";
+      }
+      function volchange() {
+        let element = document.getElementById("video");
+        document.getElementById("output").innerHTML = element. + "Video is Paused";
+      }
+      function seek() {
+        let element = document.getElementById("video");
+        document.getElementById("output").innerHTML = element + "Video is Paused";
+      }
+    </script>
+  </body>
+</html>
