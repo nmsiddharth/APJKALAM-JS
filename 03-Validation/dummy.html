@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <center><h1>Email Validation</h1></center>
+    <hr>
+
+    <form autocomplete="off" onsubmit="validation(event)">
+        <label for="">Enter Email</label>
+        <input type="text" name="email" id="email" placeholder="email">
+        <br><br>
+        <button type="submit">Submit</button>
+        <br><br>
+        <strong id="result"></strong>
+    </form>
+
+    <script>
+        function validation (e) {
+            e.preventDefault();
+
+            let input = document.getElementById("email").value;
+            let output = document.getElementById("result");
+            var space = true;
+            var temp = false;
+
+
+            if(input.length==0){
+                output.style.color="red";
+                output.innerHTML="Please enter Email ID";
+            }else{
+                for(let i=0;i<input.length;i++){
+                    if(input[i]=="@"){
+                        temp = true;
+                    }
+                    if(input[i]==" "){
+                        space=false;
+                    }
+                }
+            }
+            if(temp == true && space== true){
+                output.style.color="green";
+                output.innerHTML="Valid Email ID";
+            }else if(temp == true && space == false){
+                output.style.color="red";
+                output.innerHTML="Don't give spaces in between";
+            }else if(temp == false && space == false){
+                output.style.color="red";
+                output.innerHTML="Please include @ in Email and Don't give spaces in between";
+            }
+            else {
+                output.style.color="red";
+                output.innerHTML="Please include @ in Email ";
+        }
+    }
+    </script>
+</body>
+</html>

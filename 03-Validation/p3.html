@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+</head>
+<body>
+    <center>
+        <h1>Password Validation</h1>
+    </center>
+    <hr>
+
+    <form onsubmit="validation(event)">
+        <label for="">Enter Password</label>
+        <input type="text" placeholder="Password " name="pass" id="pass">
+        <br><br>
+        <strong id="result"></strong>
+        <br><br>
+        <button type="submit">SUBMIT Password</button>
+    </form>
+
+    <script>
+        function validation(event){
+            event.preventDefault();
+            let input = document.getElementById("pass").value;
+            let output = document.getElementById("result");
+            let correctpassword = "Sid@007!";
+            let len = input.length;
+            if(len==0){
+                output.innerHTML=`Please enter a password`;
+                output.style.color= "red";
+            }else if(input == correctpassword){
+                output.style.color= "green";
+                output.innerHTML="correct password";
+              
+            }else{
+                output.style.color= "red";
+                output.innerHTML="Incorrect password";
+                
+            }
+
+        }
+    </script>
+</body>
+</html>

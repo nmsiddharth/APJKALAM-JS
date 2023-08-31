@@ -14,17 +14,21 @@
   <script>
     function ply(){
         // let element = document.getElementById("video");
-        // document.getElementById("output").innerHTML = element.Pla + "video is playing";
-        alert("Video playing");
+         document.getElementById("output").innerHTML = "video is playing";
+       
     }
     function pausee(){
-        alert("Video paused");
+        document.getElementById("output").innerHTML = "video is paused";
+       
     }
     function vol(){
-        alert("Video volume changed");
+        let amount = (video.volume)*100;
+        document.getElementById("output").innerHTML = amount + "video volume changed";
+       
     }
     function seek(){
-        alert("Video seek");
+        document.getElementById("output").innerHTML = "video is seeking";
+       
     }
   </script>
 

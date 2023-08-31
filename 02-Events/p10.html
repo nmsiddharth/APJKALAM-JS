@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body>
+    <center>
+        <h1>onchange Events</h1>
+    </center>
+    <hr>
+    <div>
+        <select name="opt" id="opt" onchange="chng()">
+            <option value=""></option>
+            <option value="">BENZ</option>
+            <option value="">BMW</option>
+            <option value="">AUDI</option>
+            <option value="">URUS</option>
+            <option value="">POLO</option>
+        </select>
+    </div>
+    <h3 id="result"></h3>
+    <script>
+        function chng(){
+            let input = document.getElementById("opt");
+            alert("car name changed")
+        // let res = document.getElementById("result").innerHTML = "car name changed";
+        }
+    </script>
+</body>
+</html>
