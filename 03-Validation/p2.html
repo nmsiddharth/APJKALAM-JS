@@ -25,7 +25,7 @@
             let input = document.getElementById("email").value;
             let output = document.getElementById("result");
             var space = true;
-            var temp = false;
+            var temp = 0;
 
 
             if(input.length==0){
@@ -51,10 +51,10 @@
                 output.style.color="red";
                 output.innerHTML="Please include @ in Email and Don't give spaces in between";
             }
-            else {
-                output.style.color="red";
-                output.innerHTML="Please include @ in Email ";
-        }
+        //     else {
+        //         output.style.color="red";
+        //         output.innerHTML="Please include @ in Email ";
+        // }
     }
     </script>
 </body>

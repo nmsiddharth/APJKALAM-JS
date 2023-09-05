@@ -1,0 +1,38 @@
+   
+   /* Mobile version */
+
+   @media(max-width:768px){
+    .banner{
+        background: url(../images/mob.jpg);
+       background-size: 100%;
+    }
+    .card{
+        width: 100%;
+        margin-top: 0;
+    }
+    .card>h1{
+        color: red;}
+       
+     input{
+            width: 100%;
+            margin: 15px;
+        }
+
+   }
+    
+   @media(min-width:769px) and (max-width:1200px){
+    .banner{
+        background: url(../images/tablettt.jpg);
+        background-size: 100%;
+    }
+    .card{
+        width: 100%;
+        
+    }
+    .card>h1{
+        color: yellow;}
+
+        input{
+            width: 100%;
+        }
+   }

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caluclator</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/media.css" />
+  </head>
+  <body>
+    <section class="main">
+      <center>
+        <div class="container">
+     
+            <h1>CALUCLATOR-PROJECT</h1>
+    
+            <input type="text" name="result" id="result" placeholder="Result">
+ 
+          <table>
+            <tr>
+              <td>
+                <button type="button" onclick="getValueFromButton('7')">7</button>
+              </td>
+              <td>
+                <button type="button" onclick="getValueFromButton('8')">8</button>
+              </td>
+              <td>
+                <button type="button" onclick="getValueFromButton('9')">9</button>
+              </td>
+              <td>
+                <button type="button" onclick="getValueFromButton('/')">/</button>
+              </td>
+            </tr>
+
+              <tr>
+                <td>
+                  <button type="button" onclick="getValueFromButton('4')">4</button>
+                </td>
+                <td>
+                  <button type="button" onclick="getValueFromButton('5')">5</button>
+                </td>
+                <td>
+                  <button type="button" onclick="getValueFromButton('6')">6</button>
+                </td>
+                <td>
+                  <button type="button" onclick="getValueFromButton('')"></button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <button type="button" onclick="getValueFromButton('1')">1</button>
+                </td>
+                <td>
+                  <button type="button" onclick="getValueFromButton('2')">2</button>
+                </td>
+                <td>
+                  <button type="button" onclick="getValueFromButton('3')">3</button>
+                </td>
+                <td>
+                  <button type="button" onclick="getValueFromButton('-')">-</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <button type="button" onclick="getValueFromButton('.')">.</button>
+                </td>
+                <td colspan="2">
+                  <button type="button" onclick="getValueFromButton('0')">0</button>
+                </td>
+                <td>
+                  <button type="button" onclick="getValueFromButton('+')">+</button>
+                </td>
+              </tr>
+
+              <tr>
+                <td>
+                  <button type="button" onclick="getValueFromButton('%')">%</button>
+                </td>
+                <td colspan="2">
+                  <button type="button" onclick="clearValue()">Clear</button>
+                </td>
+                <td>
+                  <button type="button" onclick="finalResult()">=</button>
+                </td>
+              </tr>
+
+     
+          </table>
+      </center>
+    </section>
+    <script>
+        function getValueFromButton(val){
+       document.getElementById("result").value+=val;
+        }
+        function clearValue(){
+            document.getElementById("result").value = "";
+        }
+        function finalResult(){
+            var result = eval(document.getElementById("result").value);
+            document.getElementById("result").value = result;
+        }
+    </script>
+  </body>
+</html>

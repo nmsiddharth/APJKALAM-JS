@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARRAY</title>
+</head>
+<body>
+    <center>
+        <h1>Array Methods</h1>
+    </center>
+    <hr>
+    <h2>splice(start,deleteCount,data)</h2>
+    <script>
+        let colors = ["Red","Green","Blue","White","Black"];
+        document.write(`<h3>${colors}</h3>`);
+
+        colors.splice(2,2, "Orange","pink");
+        document.write(`<h3>${colors}</h3>`);
+
+        colors.splice(3,0,"Gold","Yellow","Grey");
+        document.write(`<h3>${colors}</h3>`);
+
+        colors.splice(3,2,"Gold","Yellow","Grey");
+        document.write(`<h3>${colors}</h3>`);
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Half _ Pyramid</title>
+    <style>
+        .banner{
+            background: url(../Basics/assets/images/image13.jpg)no-repeat center;
+            background-size: 100%;
+            border-radius: 50px;
+            padding: 20px;
+            padding-bottom: 180px;
+            margin-top: 20px;
+        }
+        .card{
+            background-color: burlywood;
+            border: 2px solid burlywood;
+            border-radius: 40px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            width: 10%;
+            margin: auto;
+            margin-top: 7%; 
+            transition: 0.5s ease-in-out;
+        }
+        .card:hover{
+            transform: scale(2,2);
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>
+            Half Pyramid
+        </h1>
+    </center>
+   <section class="banner">
+   <div class="card">
+    <script>
+    
+        for(let i=1;i<=5;i++) {
+            for(let j=1;j<=i;j++) {
+                document.write(j+ " ");
+            }
+            document.write("<br>");
+        }
+    </script>
+   </div>
+   </section>
+</body>
+</html>

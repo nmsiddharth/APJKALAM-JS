@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Project</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/media.css">
+</head>
+<body>
+    <section class="banner">
+        <center>
+            <div class="card">
+            
+                <h1>CALCULATOR-PROJECT</h1>
+        
+                <input type="text" name="display" id="display" placeholder="RESULT">
+                
+              <section class="container">
+                <table>
+                
+                   <div>
+                    <tr>
+                     
+                        <th> <button type="button" onclick="getValueFromButton('7')">7</button></th>
+                        <th><button type="button" onclick="getValueFromButton('8')">8</button></th>
+                        <th>  <button type="button" onclick="getValueFromButton('9')">9</button></th>
+                        <th>
+                            <button type="button" onclick="getValueFromButton('/')">/</button>
+                        </th>
+                       
+                    </tr>
+                   </div>
+                
+               <div>
+                <tr>
+                   
+                    <th> <button type="button" onclick="getValueFromButton('4')">4</button></th>
+                    <th><button type="button" onclick="getValueFromButton('5')">5</button></th>
+                    <th>  <button type="button" onclick="getValueFromButton('6')">6</button></th>
+                    <th>
+                        <button type="button" onclick="getValueFromButton('*')">*</button>
+                    </th>
+                   
+                </tr>
+               </div>
+                
+               <div>
+                <tr>
+                   
+                    <th> <button type="button" onclick="getValueFromButton('1')">1</button></th>
+                    <th><button type="button" onclick="getValueFromButton('2')">2</button></th>
+                    <th>  <button type="button" onclick="getValueFromButton('3')">3</button></th>
+                    <th>
+                        <button type="button" onclick="getValueFromButton('-')">-</button>
+                    </th>
+                   
+                </tr>
+               </div>
+               <div>
+                <tr>
+                 
+                    <th> <button type="button" onclick="getValueFromButton('.')">.</button></th>
+                    <th colspan="2" >
+                        <button type="button" id="col" onclick="getValueFromButton('0')">0</button>
+                    </th>
+                    <th>
+                        <button type="button" onclick="getValueFromButton('+')">+</button>
+                    </th>
+                 
+                </tr>
+               </div>
+               <div>
+                <tr>
+                 
+                    <th> <button type="button" id="perc" onclick="getValueFromButton('%')">%</button></th>
+                    <th colspan="2" >
+                        <button type="button" id="col" onclick="clearValue()">Clear</button>
+                    </th>
+                    <th>
+                        <button type="button" onclick="finalResult()">=</button>
+                    </th>
+                   
+                </tr>
+               </div>
+
+               </table>
+              </section>
+            </div>
+           </center>
+        </section>
+
+        <script>
+            function getValueFromButton(val){
+                document.getElementById("display").value += val;
+            }
+
+            function clearValue(){
+                document.getElementById("display").value = "";
+            }
+            function finalResult(){
+                let result =eval(document.getElementById("display").value);
+                document.getElementById("display").value = result;
+            }
+        </script>
+       
+           
+       
+</body>
+</html>
