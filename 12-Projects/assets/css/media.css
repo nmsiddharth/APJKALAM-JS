@@ -6,7 +6,7 @@
         background: url(../images/mob.jpg);
        background-size: 100%;
     }
-    .card{
+    /* .card{
         width: 100%;
         margin-top: 0;
     }
@@ -16,7 +16,7 @@
      input{
             width: 100%;
             margin: 15px;
-        }
+        } */
 
    }
     
@@ -25,7 +25,7 @@
         background: url(../images/tablettt.jpg);
         background-size: 100%;
     }
-    .card{
+    /* .card{
         width: 100%;
         
     }
@@ -34,5 +34,5 @@
 
         input{
             width: 100%;
-        }
+        } */
    }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Reverse String</title>
+    </head>
+    <body>
+        <section>
+            <center>
+                <h1>Reverse String</h1>
+            </center>
+            <hr>
+    
+            <form onsubmit="rev(event)">
+    
+              <div>
+                <label for="reverse">Enter a String:</label>
+                <input type="text" name="reverse" id="reverse">
+              </div>
+    
+              <div>
+                <button type="submit">Submit</button>
+              </div>
+            </form>
+            <div id="result"></div>
+        </section>
+
+        <script>
+            function rev(event){
+                event.preventDefault();
+           
+            var input = document.getElementById("reverse").value;
+            var len = input.length;
+            var temp= "";
+
+            for( var i = len-1; i>=0 ; i--){
+                
+                 temp += input[i];
+            }
+            document.getElementById("result").innerHTML= temp;
+           
+        }
+        </script>
+    </body>
+    </html>

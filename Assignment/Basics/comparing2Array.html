@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Comparison</title>
+  </head>
+  <body>
+    <section>
+      <center>
+        <h1>
+          Comparing 2 arrays ,take common values into new array and display the
+          new array
+        </h1>
+      </center>
+      <hr />
+
+      <form onsubmit="arrayCmp(event)">
+        <div>
+          <label for="arr1">Enter an Array:</label>
+          <input type="text" name="arr1" id="arr1" />
+        </div>
+        <br /><br />
+        <div>
+          <label for="arr2">Enter an Array:</label>
+          <input type="text" name="arr2" id="arr2" />
+        </div>
+        <br />
+        <div>
+          <button type="submit">Submit</button>
+        </div>
+      </form>
+      <div id="result"></div>
+    </section>
+
+    <script>
+      function arrayCmp(event) {
+        event.preventDefault();
+
+        var input1 = document.getElementById("arr1").value;
+        var input2 = document.getElementById("arr2").value;
+
+        let arrayInput1 = input1.split(" ");
+        let arrayInput2 = input2.split(" ");
+        let thirdArray=[];
+
+       for(let i=0;i<arrayInput1.length;i++){
+        for(let j=0;j<arrayInput2.length;j++){
+            if(arrayInput1[i]==arrayInput2[j]){
+                thirdArray.push(arrayInput1[i]);
+            }
+        }
+       }
+
+        document.getElementById("result").innerHTML= thirdArray.join("");
+
+        
+
+        
+       
+      }
+    </script>
+  </body>
+</html>
