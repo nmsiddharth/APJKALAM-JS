@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <center><h1>DOM</h1></center>
+    <hr>
+
+   <p class="test">hinkncscs</p>
+   <div class="test">This is another paragraph </div>
+   <p class="test">hinkncscs</p>
+
+   <script>
+    let para = document.getElementsByTagName("p");
+    
+    // document.write(`<p>${para}</p>`);
+    console.log(para);
+
+   for (let index = 0; index < para.length; index++) {
+      para[index].style.backgroundColor = "red";
+    
+   }
+    for (const key in para) {
+       para[key].style.color = "white";
+        }
+    
+
+
+   </script>
+
+
+</body>
+</html>

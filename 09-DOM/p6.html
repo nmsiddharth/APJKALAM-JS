@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <section id="blk"></section>
+
+    <hr>
+
+    <button type="button" onclick="addContent()">Add Content</button>
+    <button type="button" onclick="removeContent()">Remove Content</button>
+
+    <script>
+        function addContent(){
+            let content = `
+            <h1>Welcome to JS</h1>
+            <h3>SUB Title of JS<h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam possimus sint libero nihil dolorum, nostrum saepe, impedit laudantium doloribus sit accusamus ab tempora? Aliquid, reprehenderit sed eligendi maxime suscipit libero.</p>
+                <button type="button" onclick="removeContent()">Remove Content</button>`;
+
+                document.getElementById("blk").innerHTML=content;
+            }
+        function removeContent(){
+            document.getElementById("blk").innerHTML="";
+        }
+
+    </script>
+</body>
+</html>
