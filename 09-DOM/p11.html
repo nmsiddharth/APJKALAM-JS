@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DOM</title>
+        <style>
+            .highlight{
+                background-color: dimgray;
+            }
+        </style>
+    </head>
+    <body>
+        <center>
+            <h1>DOM</h1>
+        </center>
+        <hr>
+
+        <div id="info" class="disabled">Something very imp</div>
+
+        <script>
+            let elem = document.querySelector("#info");
+
+            elem.className = "note";
+            elem.className = "sid";
+            elem.className += " hello";
+
+            elem.classList.add("note","visible");
+            elem.classList.add("note","visible");
+
+            elem.classList.remove("visible");
+
+            elem.classList.toggle("messi");
+
+
+        </script>
+    </body>
+</html>

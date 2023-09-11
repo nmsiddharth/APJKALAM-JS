@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Swapping of 2 Numbers</title>
+        <style>
+            .banner{
+                background: url(../Basics/assets/images/image8.jpg)no-repeat center;
+                height: 91.7vh;
+                background-size: 100%;
+                border-radius: 50px;
+                padding: 20px;
+                /* padding-bottom: 150px; */
+                /* margin-top: px; */
+                /* overflow: hidden; */
+            }
+            #form{
+                border: 2px solid white;
+                border-radius: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+                width: 40%;
+                /* margin: auto; */
+                margin-top: 7%;
+            }
+            .input1{
+                 padding: 10px;
+                font-size: 25px;
+                font-weight: bold;
+                color: rgb(255, 255, 255);
+                /* margin-left: 0px; */
+                border-radius: 30px;
+                width: 70%;
+            }
+            
+          
+            input{
+                background-color:transparent;
+                color: white;
+                font-size: 20px;
+                border: 2px solid yellow;
+                border-radius: 10px;
+                width: 20%;
+            }
+            button{
+                background-color: rgb(240, 238, 234);
+                color: black;
+                border-radius: 20px;
+                border: 1px solid transparent;
+                font-size: 17px;
+                /* margin-left: 40%; */
+                margin-top: 20%;
+            }
+            button:hover{
+                transform: scale(1.5,1.5);
+                /* background-color: red; */
+            }
+            #result{
+                background-color:rgba(2, 36, 69, 0.7);
+                margin: auto;
+                width: 30%;
+                padding: 30px;
+                color:yellow;
+                font-size: 20px;
+                font-weight: bold;
+                text-align: center;
+                border-radius: 20px;
+                margin-top: 60px;
+            }
+            h1{
+                /* background-color: rgba(14, 225, 14, 0.5); */
+                text-decoration: underline;
+                color: rgb(255, 255, 255);
+                width: 60%;
+                border-radius: 10px;
+                text-align: center;
+                font-size: 40px;
+                margin-left: 2%;
+            }
+        </style>
+    </head>
+    <body>
+       <section class="banner">
+        <center>
+            <h1>
+                Swapping of 2 Numbers without 3rd Variable
+            </h1>
+      
+            <form onsubmit="swap(event)" id="form">
+          <div class="input1">
+              
+            <label for="inp1">Enter 1st Number:</label>
+            <input type="number" name="inp1" id="inp1">
+            <br><br>
+            <label for="inp2">Enter 2nd Number:</label>
+            <input type="number" name="inp2" id="inp2">
+          </div>
+
+          <div>
+            <button type="submit">Swap</button>
+          </div>
+            </form>
+
+            <div id="result"></div>
+        </center>
+       </section>
+
+       <script>
+        function swap (e) {
+            e.preventDefault();
+            let num1 = Number(document.getElementById('inp1').value);
+            let num2 = Number(document.getElementById('inp2').value);
+            let output = document.getElementById('result');
+
+            if(num1==num2){
+                output.innerHTML="Please enter Different values";
+           }else{
+            num1 = num1+num2;
+            num2= num1-num2;
+            num1 = num1-num2;
+            output.innerHTML=`After Swaping Num1 = ${num1} <br>After Swaping Num2 = ${num2}`;
+           }
+ }
+       </script>
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swapping Of 2 Numbers Without 3rd Variable</title>
+    <style>
+        form {
+            border: 2px dotted brown;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>
+            Swapping Of 2 Numbers Without 3rd Variable
+        </h1>
+        <hr>
+        <form onsubmit="swap(event)">
+            <caption>Swapping of 2 Numbers Without 3rd Variable</caption>
+            <br><br>
+            <label for="firstNumber">First Number = </label>
+            <input type="number" id="firstNumber" name="firstNumber" placeholder="Enter a number">
+            <br><br>
+            <label for="secondNumber">Second Number = </label>
+            <input type="number" id="secondNumber" name="secondNumber" placeholder="Enter a different number">
+            <br><br>
+            <button type="submit">SWAP</button>
+        </form>
+        <p id="result"></p>
+    </center>
+
+    <script>
+       function swap(holder){
+         holder.preventDefault();
+             let firstNumber = document.getElementById("firstNumber").value;
+             let secondNumber = document.getElementById("secondNumber").value;
+             let result = document.getElementById("result");
+             if(firstNumber == secondNumber){
+              result.innerText = "Please Enter A Different Number";
+             } else{
+                firstNumber = firstNumber + secondNumber;
+                secondNumber = firstNumber - secondNumber;
+                firstNumber = firstNumber - secondNumber;
+                result.innerHTML = `After Swapping First Number = ${firstNumber} <br> After Swapping Second Number = ${secondNumber}`;
+             }
+        }
+    </script>
+</body>
+
+</html>

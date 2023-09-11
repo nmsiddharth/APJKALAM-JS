@@ -1,64 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Array Comparison</title>
-  </head>
-  <body>
-    <section>
-      <center>
-        <h1>
-          Comparing 2 arrays ,take common values into new array and display the
-          new array
-        </h1>
-      </center>
-      <hr />
+    <style>
+      .banner{
+         background: url(..//assets/images/image12.jpg)no-repeat center;
+         background-size: 100%;
+         border-radius: 50px;
+         height: 90vh;
+         padding: 20px;
+         /* padding-bottom: 180px; */
+         margin-top: 20px;
+     }
+     #form{
+         background-color: rgba(64, 224, 208,0.3);
+         border: 2px solid transparent;
+         border-radius: 40px;
+         display: flex;
+         flex-direction: column;
+         padding: 20px;
+         width: 55%;
+         margin: auto;
+         margin-top: 7%;
+         transition: 0.5s ease-in-out;
+     }
+     .input1{
+       
+       padding: 10px;
+       font-size: 25px;
+       font-weight: bold;
+       color:rgb(255, 242, 4);
+       /* margin-left:100px; */
+       border-radius: 30px;
+       width: 70%;
+       transition: 0.5s ease-in-out;
+   }
+   .input1:hover{
+     color: white;
+   }
+   input{
+       background-color:transparent;
+       color: rgb(238, 239, 233);
+       font-size: 20px;
+       border: 2px solid rgb(255, 68, 0);
+       border-radius: 10px;
+       width: 50%;
+   }
+   button{
+       background-color: rgb(24, 167, 65);
+       color: rgb(239, 232, 232);
+       border-radius: 20px;
+       border: 1px solid transparent;
+       font-size: 17px;
+       /* margin-left: 40%; */
+       margin-top: 7%;
+   }
+   button:hover{
+       transform: scale(1.5,1.5);
+       color: azure;
+   }
+   #result{
+       background-color:rgba(239, 243, 247, 0.2);
+       margin: auto;
+       width: 20%;
+       padding: 30px;
+       color: azure;
+       font-size: 20px;
+       font-weight: bold;
+       text-align: center;
+       border-radius: 20px;
+       margin-top: 60px;
+       /* margin-left: 37%; */
+       transition: 0.5s ease-in-out;
+   }
+   #result:hover{
+     background-color: antiquewhite;
+     color: black;
+    
+   }
+   h1{
+       /* background-color: rgba(207, 225, 14, 0.5); */
+       color: rgb(255, 255, 255);
+       width: 70%;
+       border-radius: 10px;
+       text-align: center;
+       font-size: 40px;
+       margin-left: 1%;
+   }
+ </style>
+</head>
 
-      <form onsubmit="arrayCmp(event)">
-        <div>
-          <label for="arr1">Enter an Array:</label>
-          <input type="text" name="arr1" id="arr1" />
-        </div>
-        <br /><br />
-        <div>
-          <label for="arr2">Enter an Array:</label>
-          <input type="text" name="arr2" id="arr2" />
-        </div>
-        <br />
-        <div>
-          <button type="submit">Submit</button>
-        </div>
-      </form>
-      <div id="result"></div>
+<body>
+    <section class="banner">
+        <center>
+            <h1>
+                Comparing 2 Arrays and Printing Common Values
+            </h1>
+
+            <hr />
+
+            <form onsubmit="arrayCmp(event)" id="form">
+                <div class="input1">
+                    <label for="arr1">Enter First Array:</label>
+                    <input type="text" name="arr1" id="arr1"  /><br><br>
+                    <label for="arr2">Enter Second Array:</label>
+                    <input type="text" name="arr2" id="arr2"  />
+                </div>
+            
+                <div>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+
+            <div id="result"></div>
+        </center>
     </section>
 
     <script>
-      function arrayCmp(event) {
-        event.preventDefault();
+        function arrayCmp(event) {
+            event.preventDefault();
 
-        var input1 = document.getElementById("arr1").value;
-        var input2 = document.getElementById("arr2").value;
+            var input1 = document.getElementById("arr1").value;
+            var input2 = document.getElementById("arr2").value;
 
-        let arrayInput1 = input1.split(" ");
-        let arrayInput2 = input2.split(" ");
-        let thirdArray=[];
+            let arrayInput1 = input1.split(" ");
+            let arrayInput2 = input2.split(" ");
+            let thirdArray = [];
 
-       for(let i=0;i<arrayInput1.length;i++){
-        for(let j=0;j<arrayInput2.length;j++){
-            if(arrayInput1[i]==arrayInput2[j]){
-                thirdArray.push(arrayInput1[i]);
+            if (input1.length == 0 && input2.length == 0) {
+                document.getElementById("result").innerHTML = "Enter Array Inputs";
+            } else if (input2.length == 0) {
+                document.getElementById("result").innerHTML = "Enter Array Input 2";
+            } else if (input1.length == 0) {
+                document.getElementById("result").innerHTML = "Enter Array Input 1";
+            } else {
+                for (let i = 0; i < arrayInput1.length; i++) {
+                    for (let j = 0; j < arrayInput2.length; j++) {
+                        if (arrayInput1[i] == arrayInput2[j]) {
+                              thirdArray += arrayInput1[i];
+                            // thirdArray.push(arrayInput1[i]);
+                        }
+                    }
+                }
+                document.getElementById("result").innerHTML = thirdArray;
             }
         }
-       }
-
-        document.getElementById("result").innerHTML= thirdArray.join("");
-
-        
-
-        
-       
-      }
     </script>
-  </body>
+</body>
+
 </html>
