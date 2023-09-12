@@ -41,21 +41,25 @@
         </section>
 
         <script>
-            let selInp = document.querySelectorAll('input');
-            let selBox = document.querySelectorAll('.box');
+            let selData = [];
+            let selBox = document.querySelector('section');
 
-            for(let i=0;selInp.length;i++){
-               if(selInp[i].checked){
-                selBox[i].style.backgroundColor = "red";
-                console.log("Input",selInp[i]);
-               }
-               if(selInp[i].checked){
-                selBox[i].style.backgroundColor = " rgb(112, 215, 112)";
-                console.log("Input",selInp[i]);
-               }
+            selBox.addEventListener('click',function(){
+                console.log(`selected item = ${event.target}`);
+
+                if(event.target.type = "checkbox"){
+                    let checked = document.querySelectorAll('[type="checkbox"]:checked');
+                    console.log('checked =',checked);
+
+                    let selData = Array.from(checked).map(x => x.value);
+                    // selData += checked;
+                    console.log('seldata =',selData);
+                }
+            })
+
+           
                
-               
-            }
+            
         </script>
     </body>
 </html>
