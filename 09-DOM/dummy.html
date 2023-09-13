@@ -13,13 +13,31 @@
    </center>
    <hr>
 
-   <button onclick="mod('#222')">Click</button>
-   <button onclick="mod('white')">Click</button>
+   <button onclick="setCookie()">Set Cookie</button>
+   <button onclick="viewCookie()">view Cookie</button>
+   <button onclick="resetCookie()">Reset Cookie</button>
+
+   <h3 id="output"></h3>
 
    <script>
-      function mod(sid) {
-         document.body.style.backgroundColor=sid;
+     function setCookie(){
+      var age = "23";
+      document.cookie = `user age = ${age};expires = Wed Sep 13 2023 09:58:47 GMT+0530 (India Standard Time); secure =true`;
+     }
+     function viewCookie(){
+      if(document.cookie.length !=0){
+         document.getElementById("output").innerHTML=document.cookie;
+      }else{
+        
+         alert("No cookie found");
+      }      
+     }
+
+     function resetCookie(){
+      if(document.cookie== "user age=23"){
+         document.getElementById("output").innerHTML=""; 
       }
+     }
    </script>
 
 </body>
