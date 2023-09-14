@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOJS</title>
+</head>
+
+<body>
+    <center>
+        <h1>By using Parameterized object constructor</h1>
+    </center>
+    <hr>
+    <h3>Example-1</h3>
+    <script>
+        let empdetails1 = new Object( {
+            fname:"Siddharth",
+            lname:"NM",
+            fullname:function(){
+                return this.fname + " "+this.lname;},
+            }
+         );
+         document.write(typeof empdetails1+"<br>");
+         document.write( empdetails1.fname+"<br>");
+        document.write( empdetails1.lname+"<br>");
+        document.write( empdetails1.fullname()+"<br>");
+
+    </script>
+</body>
+
+</html>

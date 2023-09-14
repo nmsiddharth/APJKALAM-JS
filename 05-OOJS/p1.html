@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOJS</title>
+</head>
+<body>
+    <center>
+        <h1>JAVASCRIPT OBJECT</h1>                                                                                                  
+    </center>
+    <hr>
+    <ol>
+        <li>Literal Object(single)</li>
+        <ul>
+            <li>Object Literal</li>
+            <li>Creating instance of object directly (using constructor method)</li>
+            <li>using an object constructor ( using constructor parameter)</li>
+        </ul>
+        <li>Object Array</li>
+        <li>JSON ( Javascript Object Notation) Array (Response of REST  [Representational State Transfer]) API</li>
+    </ol>
+    <hr>
+
+    <center>
+        <h1>Literal Object</h1>
+        <h4>key: value => property of an object</h4>
+    </center>
+    <p><strong>SYNTAX:</strong></p>
+    <pre>
+        let literalObjectName = {
+            "key1":"value1",
+            "key2":"value2",
+            "key3":"value3",
+            "keyN":"valueN",
+
+        };
+
+        console.log(literalObjectName);
+        console.log(typeof(literalObjectName));
+        console.log(literalObjectName.key1);
+    </pre>
+
+    <script>
+        let car = {
+            "Model":2020,
+            "Color":"Red",
+            "Brand":"Ignis",
+            "Company":"MarutiSuzuki",
+            "isRunnable":true,
+        };
+
+        document.write(`<h3>Car = ${car}</h3>`);
+        document.write(`<h3>Car typeof = ${typeof car}</h3>`);
+        document.write(`<h3>Car Model = ${car.Model}</h3>`);
+        document.write(`<h3>Car Color = ${car['Color']}</h3>`);
+        document.write(`<h3>Car Brand = ${car.Brand}</h3>`);
+        document.write(`<h3>Car Company = ${car.Company}</h3>`);
+        document.write(`<h3>Car isRunnable = ${car.isRunnable}</h3>`);
+
+        
+
+
+
+
+
+    </script>
+</body>
+</html>
