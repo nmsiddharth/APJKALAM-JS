@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         const user = {
+            name : 'Sid',
+            email: "sid@gmail.com",
+            mobile: "9901043718",
+            age: 23
+        };
+       console.log(user);
+
+       let hello = Object.create(user);
+       console.log(hello);
+
+       let user2 = Object.getPrototypeOf(hello);
+       console.log(user2);
+
+       let emp = {
+        bank:'sbi',
+        acc: "123455",
+        bal:"23455"
+       }
+       let user3 = Object.setPrototypeOf(user2,emp);
+       console.log(user3);
+
+       let user4 = {
+        name:"virat"
+       };
+
+       Object.defineProperty(user4,"age",{
+        value:24
+       });
+       console.log(user4);
+
+       let user5 = {
+        name :"sachin",
+       };
+
+       Object.defineProperties(user5,{
+        age:{
+            value:25
+        },
+        gender:{
+            value:'male'
+        },
+       })
+       console.log(user5);
+
+
+       let user6 = {
+        name:"dise",
+        email :"dise@gmail.com"
+       };
+       
+       let user7 = {
+        age:"25",
+        email :"virat@gmail.com"
+       }
+
+       console.log(Object.assign(user6,user7))
+
+       const user8 = {
+            name : 'Sid',
+            email: "sid@gmail.com",
+            mobile: "9901043718",
+            age: 23
+        };
+
+        console.log(Object.entries(user8))
+
+        for (const [key, value] of Object.entries(user8)){
+            console.log(`${key} : ${value}`);
+        }
+
+        console.log(Object.keys(user8));
+        console.log(Object.values(user8))
+
+        for (const key in user8) {
+            console.log(`${user8[key]}`)
+        }
+
+        var user9 = {};
+
+        var user10 = Object.defineProperties(user9,{
+            name:{
+                value: "sid",
+                writable:false
+            },
+            age:{
+                value:25,
+                writable:true
+            }
+        });
+
+        console.log(user10);
+
+        console.log(user10.name = "Cristiano");
+        console.log(user10.age = 40);
+    
+        console.log(user10);
+    </script>
+</body>
+</html>
