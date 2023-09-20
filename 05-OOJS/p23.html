@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOJS</title>
+</head>
+<body>
+    <center>
+        <h1>Parameter function Constructor</h1>
+    </center>
+    <hr>
+
+    <script>
+        function course(ti,fe,du){
+            this.title = ti;
+            this.fee = fe;
+            this.duration = du;}
+
+            let x1 = new course('Javascript',1234,'1month');
+
+            console.log(x1);
+
+            document.write(`<h1> title = ${x1.title}</h1>`);
+            document.write(`<h1> fee = ${x1.fee}</h1>`);
+            document.write(`<h1> Duration = ${x1.duration}</h1>`);
+        
+            let x2 = new course('React',3234,'1.5month');
+
+                console.log(x2);
+
+                document.write(`<h1> title = ${x2.title}</h1>`);
+                document.write(`<h1> fee = ${x2.fee}</h1>`);
+                document.write(`<h1> Duration = ${x2.duration}</h1>`);
+    </script>
+</body>
+</html>

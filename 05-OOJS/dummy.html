@@ -102,8 +102,44 @@
 
         console.log(user10.name = "Cristiano");
         console.log(user10.age = 40);
+
+        Object.freeze(user10);
+        console.log(user10);
     
         console.log(user10);
+
+        const user11 = [['name','sid'],['age',24]];
+
+        console.log(user11);
+        Object.fromEntries(user11);
+        console.log( Object.fromEntries(user11));
+
+        const user12 = {
+                name:'john',
+                surname:'kumar',
+                email:'john@gmail.com'
+            };
+
+            Object.defineProperty(user12,"fullname",{
+                get: function (){
+                    return this.name + " " + this.surname;
+                }
+            });
+            console.log(user12);
+
+        Object.defineProperty(user12,'age',{
+            value:23
+        });
+
+        console.log(user12);
+
+        let result = Object.keys(user12).map(function(key){
+            return user12[key];
+        })
+
+
+
+        console.log(result);
     </script>
 </body>
 </html>
