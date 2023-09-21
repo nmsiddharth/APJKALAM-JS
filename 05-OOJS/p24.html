@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOJS</title>
+</head>
+<body>
+    <center><h1>Prototype</h1>
+    <p>Prototype keyword - us used to create a property to an Constructor externally</p></center>
+    <hr>
+
+    <script>
+        function Student(){
+            // Local property
+            let name , gender;
+
+            // Constructor Property
+            this.name = "ABCD";
+            this.gender = "Male";
+        }
+
+        let stud = new Student();
+
+        document.write(`Stud name = ${stud.name}<br>`);
+        document.write(`Stud gender = ${stud.gender}<br>`);
+
+        stud.age = 20;
+        document.write(`Stud age = ${stud.age}<br><br>`);
+
+        let stud1 = new Student();
+        document.write(`Stud1 name = ${stud1.name}<br>`);
+        document.write(`Stud1 gender = ${stud1.gender}<br>`);
+        document.write(`Stud1 age = ${stud1.age}<br><br>`);   // will not get output bcoz AGE property is not defined in this object 
+
+        Student.prototype.age1 = 30;
+
+        let stud2 = new Student();
+        document.write(`Stud2 age = ${stud2.age1}<br><br>`);
+
+        let stud3 = new Student();
+        document.write(`Stud3 age = ${stud3.age1}<br><br>`);
+
+    </script>
+</body>
+</html>

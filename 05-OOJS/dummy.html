@@ -7,139 +7,150 @@
 </head>
 <body>
     <script>
-         const user = {
-            name : 'Sid',
-            email: "sid@gmail.com",
-            mobile: "9901043718",
-            age: 23
-        };
-       console.log(user);
+    //      const user = {
+    //         name : 'Sid',
+    //         email: "sid@gmail.com",
+    //         mobile: "9901043718",
+    //         age: 23
+    //     };
+    //    console.log(user);
 
-       let hello = Object.create(user);
-       console.log(hello);
+    //    let hello = Object.create(user);
+    //    console.log(hello);
 
-       let user2 = Object.getPrototypeOf(hello);
-       console.log(user2);
+    //    let user2 = Object.getPrototypeOf(hello);
+    //    console.log(user2);
 
-       let emp = {
-        bank:'sbi',
-        acc: "123455",
-        bal:"23455"
-       }
-       let user3 = Object.setPrototypeOf(user2,emp);
-       console.log(user3);
+    //    let emp = {
+    //     bank:'sbi',
+    //     acc: "123455",
+    //     bal:"23455"
+    //    }
+    //    let user3 = Object.setPrototypeOf(user2,emp);
+    //    console.log(user3);
 
-       let user4 = {
-        name:"virat"
-       };
+    //    let user4 = {
+    //     name:"virat"
+    //    };
 
-       Object.defineProperty(user4,"age",{
-        value:24
-       });
-       console.log(user4);
+    //    Object.defineProperty(user4,"age",{
+    //     value:24
+    //    });
+    //    console.log(user4);
 
-       let user5 = {
-        name :"sachin",
-       };
+    //    let user5 = {
+    //     name :"sachin",
+    //    };
 
-       Object.defineProperties(user5,{
-        age:{
-            value:25
-        },
-        gender:{
-            value:'male'
-        },
-       })
-       console.log(user5);
+    //    Object.defineProperties(user5,{
+    //     age:{
+    //         value:25
+    //     },
+    //     gender:{
+    //         value:'male'
+    //     },
+    //    })
+    //    console.log(user5);
 
 
-       let user6 = {
-        name:"dise",
-        email :"dise@gmail.com"
-       };
+    //    let user6 = {
+    //     name:"dise",
+    //     email :"dise@gmail.com"
+    //    };
        
-       let user7 = {
-        age:"25",
-        email :"virat@gmail.com"
-       }
+    //    let user7 = {
+    //     age:"25",
+    //     email :"virat@gmail.com"
+    //    }
 
-       console.log(Object.assign(user6,user7))
+    //    console.log(Object.assign(user6,user7))
 
-       const user8 = {
-            name : 'Sid',
-            email: "sid@gmail.com",
-            mobile: "9901043718",
-            age: 23
-        };
+    //    const user8 = {
+    //         name : 'Sid',
+    //         email: "sid@gmail.com",
+    //         mobile: "9901043718",
+    //         age: 23
+    //     };
 
-        console.log(Object.entries(user8))
+    //     console.log(Object.entries(user8))
 
-        for (const [key, value] of Object.entries(user8)){
-            console.log(`${key} : ${value}`);
-        }
+    //     for (const [key, value] of Object.entries(user8)){
+    //         console.log(`${key} : ${value}`);
+    //     }
 
-        console.log(Object.keys(user8));
-        console.log(Object.values(user8))
+    //     console.log(Object.keys(user8));
+    //     console.log(Object.values(user8))
 
-        for (const key in user8) {
-            console.log(`${user8[key]}`)
-        }
+    //     for (const key in user8) {
+    //         console.log(`${user8[key]}`)
+    //     }
 
-        var user9 = {};
+    //     var user9 = {};
 
-        var user10 = Object.defineProperties(user9,{
-            name:{
-                value: "sid",
-                writable:false
-            },
-            age:{
-                value:25,
-                writable:true
-            }
-        });
+    //     var user10 = Object.defineProperties(user9,{
+    //         name:{
+    //             value: "sid",
+    //             writable:false
+    //         },
+    //         age:{
+    //             value:25,
+    //             writable:true
+    //         }
+    //     });
 
-        console.log(user10);
+    //     console.log(user10);
 
-        console.log(user10.name = "Cristiano");
-        console.log(user10.age = 40);
+    //     console.log(user10.name = "Cristiano");
+    //     console.log(user10.age = 40);
 
-        Object.freeze(user10);
-        console.log(user10);
+    //     Object.freeze(user10);
+    //     console.log(user10);
     
-        console.log(user10);
+    //     console.log(user10);
 
-        const user11 = [['name','sid'],['age',24]];
+    //     const user11 = [['name','sid'],['age',24]];
 
-        console.log(user11);
-        Object.fromEntries(user11);
-        console.log( Object.fromEntries(user11));
+    //     console.log(user11);
+    //     Object.fromEntries(user11);
+    //     console.log( Object.fromEntries(user11));
 
-        const user12 = {
-                name:'john',
-                surname:'kumar',
-                email:'john@gmail.com'
-            };
+    //     const user12 = {
+    //             name:'john',
+    //             surname:'kumar',
+    //             email:'john@gmail.com'
+    //         };
 
-            Object.defineProperty(user12,"fullname",{
-                get: function (){
-                    return this.name + " " + this.surname;
-                }
-            });
-            console.log(user12);
+    //         Object.defineProperty(user12,"fullname",{
+    //             get: function (){
+    //                 return this.name + " " + this.surname;
+    //             }
+    //         });
+    //         console.log(user12);
 
-        Object.defineProperty(user12,'age',{
-            value:23
-        });
+    //     Object.defineProperty(user12,'age',{
+    //         value:23
+    //     });
 
-        console.log(user12);
+    //     console.log(user12);
 
-        let result = Object.keys(user12).map(function(key){
-            return user12[key];
-        })
+    //     let result = Object.keys(user12).map(function(key){
+    //         return user12[key];
+    //     });
+    //     console.log(result);
 
 
+        function User(){
+            this.name="sid";
+            this.age=23;
+            this.id='1';
+            let a = 2;
+        };
+            let x = new User();
 
-        console.log(result);
+            console.log(x);
+            console.log(`${x.name}`);
+            console.log(`${x.age}`);
+        
     </script>
 </body>
 </html>
