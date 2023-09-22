@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OOJS</title>
+    </head>
+    <body>
+        <center>
+            <h1>Class ES-6</h1>
+            <p>Parameterised Class</p>
+        </center>
+        <hr>
+
+        <script>
+            class Sum{
+                constructor(x,y){
+                    this.a = x;
+                    this.b = y;
+                }
+                calculate(){
+                    return this.a + this.b;
+                }
+            }
+
+            let s = new Sum(12,44);
+            
+            let s1 = new Sum(10,50);
+
+            console.log(s);
+            console.log(s1);
+
+            document.write(`<h3>s = ${s.calculate()}<br></h3>`);
+            document.write(`<h3>s1 = ${s1.calculate()}</h3>`);
+
+        </script>
+    </body>
+</html>

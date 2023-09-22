@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OOJS</title>
+    </head>
+    <body>
+        <center>
+            <h1>Class ES-6</h1>
+            <p>Finding Odd or Even using Class</p>
+        </center>
+        <hr>
+
+        <form onclick="Check(event)">
+            <label for="inp">Enter Number</label>
+            <input type="number" name="inp" id="inp">
+            <br><br>
+            <button type="submit">Submit</button>
+            <hr>
+            <h3 id="result"></h3>
+        </form>
+
+        <script>
+            class Check{      
+                constructor(e){
+                    e.preventDefault();
+                    this.input = document.getElementById("inp").value;
+                    this.output = document.getElementById('result');
+                }
+                checkOddEven() {
+                    if(input%2==0){
+                        this.output.innerHTML=`${this.input} is an even number`;
+                    }else{
+                        this.output.innerHTML=`${this.input} is an odd number`;
+                    }
+                }
+            }
+            let s= new Check();
+
+            document.write(`${s.checkOddEven()}`);
+        </script>
+    </body>
+</html>
