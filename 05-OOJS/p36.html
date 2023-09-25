@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOJS</title>
+</head>
+
+<body>
+    <center>
+        <h1>Static Method</h1>
+    </center>
+    <hr>
+
+    <!-- Static method inside the class -->
+
+    <script>
+        class Course {
+            constructor(title, dur) {
+                document.write(`<h3>Constructor called</h3>`);
+                this.title = title;
+                this.duration = dur;
+
+                // document.write( `<h3>${this.title}</h3>`);
+                // document.write( `<h3>${this.duration}</h3>`);
+            }
+            static print(val) {
+                // this pointer is inactive inside the static method
+                // document.write( `<h3>${this.title}</h3>`);
+                // document.write( `<h3>${this.duration}</h3>`);
+                document.write( `<h3>${val}</h3>`);
+            }
+
+            // Non-static method
+            courseInfo(){
+                 document.write( `<h3>${this.title} ${this.duration}</h3>`);
+            }
+
+        }
+
+        let x = new Course("JS", "2 Months");
+        Course.print('Be-Practical');  // static method is called using className
+        x.courseInfo();  // non-static method is called using object
+    </script>
+</body>
+
+</html>

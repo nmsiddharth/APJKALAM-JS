@@ -1,156 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-    //      const user = {
-    //         name : 'Sid',
-    //         email: "sid@gmail.com",
-    //         mobile: "9901043718",
-    //         age: 23
-    //     };
-    //    console.log(user);
-
-    //    let hello = Object.create(user);
-    //    console.log(hello);
-
-    //    let user2 = Object.getPrototypeOf(hello);
-    //    console.log(user2);
-
-    //    let emp = {
-    //     bank:'sbi',
-    //     acc: "123455",
-    //     bal:"23455"
-    //    }
-    //    let user3 = Object.setPrototypeOf(user2,emp);
-    //    console.log(user3);
-
-    //    let user4 = {
-    //     name:"virat"
-    //    };
-
-    //    Object.defineProperty(user4,"age",{
-    //     value:24
-    //    });
-    //    console.log(user4);
-
-    //    let user5 = {
-    //     name :"sachin",
-    //    };
-
-    //    Object.defineProperties(user5,{
-    //     age:{
-    //         value:25
-    //     },
-    //     gender:{
-    //         value:'male'
-    //     },
-    //    })
-    //    console.log(user5);
-
-
-    //    let user6 = {
-    //     name:"dise",
-    //     email :"dise@gmail.com"
-    //    };
-       
-    //    let user7 = {
-    //     age:"25",
-    //     email :"virat@gmail.com"
-    //    }
-
-    //    console.log(Object.assign(user6,user7))
-
-    //    const user8 = {
-    //         name : 'Sid',
-    //         email: "sid@gmail.com",
-    //         mobile: "9901043718",
-    //         age: 23
-    //     };
-
-    //     console.log(Object.entries(user8))
-
-    //     for (const [key, value] of Object.entries(user8)){
-    //         console.log(`${key} : ${value}`);
-    //     }
-
-    //     console.log(Object.keys(user8));
-    //     console.log(Object.values(user8))
-
-    //     for (const key in user8) {
-    //         console.log(`${user8[key]}`)
-    //     }
-
-    //     var user9 = {};
-
-    //     var user10 = Object.defineProperties(user9,{
-    //         name:{
-    //             value: "sid",
-    //             writable:false
-    //         },
-    //         age:{
-    //             value:25,
-    //             writable:true
-    //         }
-    //     });
-
-    //     console.log(user10);
-
-    //     console.log(user10.name = "Cristiano");
-    //     console.log(user10.age = 40);
-
-    //     Object.freeze(user10);
-    //     console.log(user10);
-    
-    //     console.log(user10);
-
-    //     const user11 = [['name','sid'],['age',24]];
-
-    //     console.log(user11);
-    //     Object.fromEntries(user11);
-    //     console.log( Object.fromEntries(user11));
-
-    //     const user12 = {
-    //             name:'john',
-    //             surname:'kumar',
-    //             email:'john@gmail.com'
-    //         };
-
-    //         Object.defineProperty(user12,"fullname",{
-    //             get: function (){
-    //                 return this.name + " " + this.surname;
-    //             }
-    //         });
-    //         console.log(user12);
-
-    //     Object.defineProperty(user12,'age',{
-    //         value:23
-    //     });
-
-    //     console.log(user12);
-
-    //     let result = Object.keys(user12).map(function(key){
-    //         return user12[key];
-    //     });
-    //     console.log(result);
-
-
-        function User(){
-            this.name="sid";
-            this.age=23;
-            this.id='1';
-            let a = 2;
-        };
-            let x = new User();
-
-            console.log(x);
-            console.log(`${x.name}`);
-            console.log(`${x.age}`);
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact List</title>
+    <link rel="stylesheet" href="assets/fontawesome/css/all.css">
+    <style>
+      /* * {
+        padding: 0%;
+        margin: 0%;
+      } */
+      .container {
+        height: auto;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        /* justify-content: center; */
+        /* row-gap: 30px; */
+      }
+      .item {
+        border: 1px solid transparent;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        width: 28%;
+        height: auto;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        margin-left: 58px;
+        display: flex;
+        flex-flow: column nowrap;
+        border-radius: 10px;
+        transition: 0.5s ease-in-out;
+      }
+      .item:hover{
+        transform: scale(1.1,1.1);
+      }
+      img{
+        height: 350px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+      }
+      .name{
+        text-align: center;
+        font-size: xx-large;
+        margin: 10px;
+      }
+      .email, .mobile{
+        /* display: flex;
+        justify-content: space-around;
+        align-items: center; */
+        word-spacing: 160px;
+        padding: 15px;
+        margin: auto 20px;
+        line-height: 1;
+        font-size: 17px;
         
+      }
+      .address{
+        display: flex;
+        line-height: 3;
+        margin-left: 35px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      details>summary::marker{
+        /* color: white; */
+        font-size: 15px;
+      }
+      .button{
+        display: flex;
+        justify-content: space-between;
+        padding: 15px;
+      }
+      .fa-pen{
+        background-color: rgb(10, 122, 213) ;
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+      }
+      .fa-trash{
+        background-color: red;
+        padding: 10px;
+        border-radius: 5px;
+        color: white;
+      }
+      .button:hover{
+        cursor: pointer;
+      }
+      h1{
+        margin: 30px;
+        font-size: 40px;
+        font-weight: lighter;
+      }
+      span{
+        color: crimson;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      
+
+
+      /* Media code */
+
+      /* Mobile version */
+
+    @media(max-width:768px){
+        .container{
+            flex-flow: column;
+            
+        }
+        .item{
+            width: 70%;
+            margin-right: 53px;
+        }
+    }
+
+       /* Tablet Version */
+
+       @media(min-width:769px) and (max-width:1200px){
+        .container{
+            flex-flow: row wrap;
+            justify-content: space-between;
+            /* width: 100%; */
+
+            
+        }
+        .item{
+            width: 40%;
+            margin-right: 30px;
+            margin-left: 43px;
+            
+        }
+       }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>CONTACT LIST</h1>
+    </center>
+    <section class="container" id="container"></section>
+    <script>
+      const container = document.getElementById("container");
+    
+      var details = 
+        {
+            profilePic : ["assets/images/image1b.jpg","assets/images/image1g.jpg","assets/images/image2b.jpg","assets/images/image2g.jpg","assets/images/image3b.jpg","assets/images/image3g.jpg","assets/images/image4b.jpg","assets/images/image4g.jpg","assets/images/image5b.jpg","assets/images/image5g.jpg"],
+            name :["Sid","Diya","Antony","Natasha","Neymar","Katherine","Kante","Mi Young","Rocky","Cindy"],
+            email:["sid@gmail.com",'diya@gmail.com',"antony@gmail.com",'natasha@gmail.com','neymar@gmail.com','kath@gmail.com','kante@gmail.com','miy@gmail.com','rocky@gmail.com','cindy@gmail.com'],
+            mobile:['9901043718','9901044518','9901343718','9903243718','9341043718','9901043568','99010434718','99010496718','9924343718','9901034718'],
+            address: ["Kengeri","Ullal","Banashankri","Yelahanka","Indiranagar","MG Road","Mallathalli","Uttarhalli","Chickpete","Majestic",],
+            editIcon : `<i class="fa-solid fa-pen"></i>`,
+            deleteIcon:`<i class="fa-solid fa-trash"></i>`
+        };
+      
+
+      for (let i = 0; i < 10; i++) {
+        const item = document.createElement("div"); // Create a new <div> element
+        item.className = "item"; // Assign the "item" class to the <div>
+        const img = document.createElement("img"); // Create a new <img> element
+        img.setAttribute("src", details.profilePic[i]); // Set the "src" attribute of the <img> to the image URL
+        item.appendChild(img); // Append the <img> to the <div>
+        let info = document.createElement("div");
+        info.className = "information";
+        item.appendChild(info);
+        let part1 = document.createElement("div");
+        part1.className = "name";
+        let part2 = document.createElement("div");
+        part2.className = "email";
+        let part3 = document.createElement("div");
+        part3.className = "mobile";
+        let part4 = document.createElement("detail");
+        part4.className = "address";
+        let part5 = document.createElement("div");
+
+        part5.className = "button";
+
+        let part51 = document.createElement("button");
+        let part52 = document.createElement("button");
+
+        part5.append(part51,part52); 
+       
+        part1.innerHTML = details.name[i];
+        part2.innerHTML = `<b>Email </b>${details.email[i]}`;
+        part3.innerHTML = `<b>Mobile </b>${details.mobile[i]}`;
+            part4.innerHTML = "<details><summary>Address</summary><span>" + details.address[i] + "</span></details>";
+        part5.innerHTML =  details.editIcon + details.deleteIcon;
+
+        info.append(part1, part2, part3, part4, part5);
+        
+        
+        container.appendChild(item); // Append the <div> to the container
+      }
+      
+      
     </script>
-</body>
+    <script src="assets/fontawesome/js/all.js"></script>
+  </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+ 

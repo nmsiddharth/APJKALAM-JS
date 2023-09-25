@@ -15,42 +15,53 @@
         display: flex;
         flex-flow: row wrap;
         align-items: center;
-        /* justify-content: center; */
+        /* justify-content: flex-start; */
         /* row-gap: 30px; */
+        column-gap: 5px;
       }
       .item {
         border: 1px solid transparent;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-        width: 28%;
+        /* flex: 1; */
+        width: 31.1%;
+        /* width: 100%; */
         height: auto;
-        margin-top: 20px;
-        margin-bottom: 30px;
-        margin-left: 58px;
+        margin: 13px;
+        margin-left: 10px;
+        /* margin-top: 20px;
+        margin-bottom: 10px; */
+        /* margin-left: 58px; */
         display: flex;
         flex-flow: column nowrap;
         border-radius: 10px;
         transition: 0.5s ease-in-out;
       }
+      /* .item:last-child{
+        float: ;
+      } */
+      
       .item:hover{
-        transform: scale(1.1,1.1);
+        transform: scale(1,1);
       }
       img{
         height: 350px;
+        /* width: 100%; */
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
       }
       .name{
         text-align: center;
         font-size: xx-large;
+        font-weight: bold;
         margin: 10px;
       }
       .email, .mobile{
         /* display: flex;
         justify-content: space-around;
         align-items: center; */
-        word-spacing: 160px;
+        word-spacing: 150px;
         padding: 15px;
-        margin: auto 20px;
+        margin: auto 35px;
         line-height: 1;
         font-size: 17px;
         
@@ -58,7 +69,7 @@
       .address{
         display: flex;
         line-height: 3;
-        margin-left: 35px;
+        margin-left: 50px;
         font-size: 18px;
         font-weight: bold;
       }
@@ -96,6 +107,14 @@
         font-size: 20px;
         font-weight: bold;
       }
+      .editbutton{
+        background-color: transparent;
+        border-color: transparent;
+      }
+      .deletebutton{
+        background-color: transparent;
+        border-color: transparent;
+      }
       
 
 
@@ -109,9 +128,15 @@
             
         }
         .item{
-            width: 70%;
-            margin-right: 53px;
+            width: 95%;
+           
         }
+        .email, .mobile{
+        
+        word-spacing: 400px;
+       
+        
+      }
     }
 
        /* Tablet Version */
@@ -119,17 +144,26 @@
        @media(min-width:769px) and (max-width:1200px){
         .container{
             flex-flow: row wrap;
-            justify-content: space-between;
+            justify-content: center;
+            column-gap: 0px;
+            /* justify-content: space-between; */
             /* width: 100%; */
 
             
         }
         .item{
-            width: 40%;
-            margin-right: 30px;
-            margin-left: 43px;
+            width: 46.4%;
+           
+            /* margin-right: 30px;
+            margin-left: 43px; */
             
         }
+        .email, .mobile{
+        
+        word-spacing: 250px;
+       
+        
+      }
        }
     </style>
   </head>
@@ -139,52 +173,199 @@
     </center>
     <section class="container" id="container"></section>
     <script>
-      const container = document.getElementById("container");
-    
-      var details = 
+
+  var details = [
         {
-            profilePic : ["assets/images/image1b.jpg","assets/images/image1g.jpg","assets/images/image2b.jpg","assets/images/image2g.jpg","assets/images/image3b.jpg","assets/images/image3g.jpg","assets/images/image4b.jpg","assets/images/image4g.jpg","assets/images/image5b.jpg","assets/images/image5g.jpg"],
-            name :["Sid","Diya","Antony","Natasha","Neymar","Katherine","Kante","Mi Young","Rocky","Cindy"],
-            email:["sid@gmail.com",'diya@gmail.com',"antony@gmail.com",'natasha@gmail.com','neymar@gmail.com','kath@gmail.com','kante@gmail.com','miy@gmail.com','rocky@gmail.com','cindy@gmail.com'],
-            mobile:['9901043718','9901044518','9901343718','9903243718','9341043718','9901043568','99010434718','99010496718','9924343718','9901034718'],
-            address: ["Kengeri","Ullal","Banashankri","Yelahanka","Indiranagar","MG Road","Mallathalli","Uttarhalli","Chickpete","Majestic",],
-            editIcon : `<i class="fa-solid fa-pen"></i>`,
-            deleteIcon:`<i class="fa-solid fa-trash"></i>`
-        };
-      
+          profilePic : "assets/images/image1b.jpg",
+          name : "Sid",
+          email: "sid@gmail.com",
+          mobile: '9901043718',
+          address: "Kengeri",
+        },
+        {
+          profilePic : "assets/images/image1g.jpg",
+          name : "Diya",
+          email: "diya@gmail.com",
+          mobile: '9901044518',
+          address: "Ullal",
+        },
+        {
+          profilePic : "assets/images/image2b.jpg",
+          name : "Antony",
+          email: "antony@gmail.com",
+          mobile: '9901343718',
+          address: "Banashankri",
+        },
+        {
+          profilePic : "assets/images/image2g.jpg",
+          name : "Natasha",
+          email: "natasha@gmail.com",
+          mobile: '9903243718',
+          address: "Yelahanka",
+        },
+        {
+          profilePic : "assets/images/image3b.jpg",
+          name : "Neymar",
+          email: "neymar@gmail.com",
+          mobile: '9341043718',
+          address: "Indiranagar",
+        },
+        {
+          profilePic : "assets/images/image3g.jpg",
+          name : "Katherine",
+          email: "kath@gmail.com",
+          mobile: '9901043568',
+          address: "MG Road",
+        },
+        {
+          profilePic : "assets/images/image4b.jpg",
+          name : "Kante",
+          email: "kante@gmail.com",
+          mobile: '99010434718',
+          address: "Mallathalli",
+        },
+        {
+          profilePic : "assets/images/image4g.jpg",
+          name : "Mi Young",
+          email: "miy@gmail.com",
+          mobile: '99010496718',
+          address: "Uttarhalli",
+        },
+        {
+          profilePic : "assets/images/image5b.jpg",
+          name : "Rocky",
+          email: "rocky@gmail.com",
+          mobile: '9924343718',
+          address: "Chickpete",
+        },
+        {
+          profilePic : "assets/images/image5g.jpg",
+          name : "Cindy",
+          email: "cindy@gmail.com",
+          mobile: '9901034718',
+          address: "Majestic",
+        },
 
-      for (let i = 0; i < 10; i++) {
+      ];
+     
+      function employeeDetails(){
+      var container = document.getElementById("container");
+    
+    // var details = 
+    //   {
+    //       profilePic : ["assets/images/image1b.jpg","assets/images/image1g.jpg","assets/images/image2b.jpg","assets/images/image2g.jpg","assets/images/image3b.jpg","assets/images/image3g.jpg","assets/images/image4b.jpg","assets/images/image4g.jpg","assets/images/image5b.jpg","assets/images/image5g.jpg"],
+    //       name :["Sid","Diya","Antony","Natasha","Neymar","Katherine","Kante","Mi Young","Rocky","Cindy"],
+    //       email:["sid@gmail.com",'diya@gmail.com',"antony@gmail.com",'natasha@gmail.com','neymar@gmail.com','kath@gmail.com','kante@gmail.com','miy@gmail.com','rocky@gmail.com','cindy@gmail.com'],
+    //       mobile:['9901043718','9901044518','9901343718','9903243718','9341043718','9901043568','99010434718','99010496718','9924343718','9901034718'],
+    //       address: ["Kengeri","Ullal","Banashankri","Yelahanka","Indiranagar","MG Road","Mallathalli","Uttarhalli","Chickpete","Majestic",],
+    //       editIcon : `<i class="fa-solid fa-pen"></i>`,
+    //       deleteIcon:`<i class="fa-solid fa-trash"></i>`
+    //   };
+    
+     
+
+    // for (let i = 0; i < 10; i++) {
+    //   const item = document.createElement("div"); // Create a new <div> element
+    //   item.className = "item"; // Assign the "item" class to the <div>
+    //   const img = document.createElement("img"); // Create a new <img> element
+    //   img.setAttribute("src", details.profilePic[i]); // Set the "src" attribute of the <img> to the image URL
+    //   item.appendChild(img); // Append the <img> to the <div>
+    //   let info = document.createElement("div");
+    //   info.className = "information";
+    //   item.appendChild(info);
+    //   let part1 = document.createElement("div");
+    //   part1.className = "name";
+    //   let part2 = document.createElement("div");
+    //   part2.className = "email";
+    //   let part3 = document.createElement("div");
+    //   part3.className = "mobile";
+    //   let part4 = document.createElement("detail");
+    //   part4.className = "address";
+    //   let part5 = document.createElement("div");
+    //   part5.className = "button";
+     
+    //   part1.innerHTML = details.name[i];
+    //   part2.innerHTML = `<b>Email </b>${details.email[i]}`;
+    //   part3.innerHTML = `<b>Mobile </b>${details.mobile[i]}`;
+    //       part4.innerHTML = "<details><summary>Address</summary><span>" + details.address[i] + "</span></details>";
+    //   part5.innerHTML =  details.editIcon + details.deleteIcon;
+
+    //   info.append(part1, part2, part3, part4, part5);
+      
+      
+    //   container.appendChild(item); // Append the <div> to the container
+    // }
+    
+      details.forEach(employee => {
         const item = document.createElement("div"); // Create a new <div> element
-        item.className = "item"; // Assign the "item" class to the <div>
-        const img = document.createElement("img"); // Create a new <img> element
-        img.setAttribute("src", details.profilePic[i]); // Set the "src" attribute of the <img> to the image URL
-        item.appendChild(img); // Append the <img> to the <div>
-        let info = document.createElement("div");
-        info.className = "information";
-        item.appendChild(info);
-        let part1 = document.createElement("div");
-        part1.className = "name";
-        let part2 = document.createElement("div");
-        part2.className = "email";
-        let part3 = document.createElement("div");
-        part3.className = "mobile";
-        let part4 = document.createElement("detail");
-        part4.className = "address";
-        let part5 = document.createElement("div");
-        part5.className = "button";
-       
-        part1.innerHTML = details.name[i];
-        part2.innerHTML = `<b>Email </b>${details.email[i]}`;
-        part3.innerHTML = `<b>Mobile </b>${details.mobile[i]}`;
-            part4.innerHTML = "<details><summary>Address</summary><span>" + details.address[i] + "</span></details>";
-        part5.innerHTML =  details.editIcon + details.deleteIcon;
+      item.className = "item"; // Assign the "item" class to the <div>
 
-        info.append(part1, part2, part3, part4, part5);
-        
-        
-        container.appendChild(item); // Append the <div> to the container
+      const img = document.createElement("img"); // Create a new <img> element
+      img.src = employee.profilePic; 
+      item.appendChild(img); // Append the <img> to the <div>
+    
+      let info = document.createElement("div");
+      info.className = "information";
+      item.appendChild(info);
+
+      let part1 = document.createElement("div");
+      part1.className = "name";
+      part1.innerHTML = employee.name;
+
+      let part2 = document.createElement("div");
+      part2.className = "email";
+      part2.innerHTML = `<b>Email </b>${employee.email}`;
+
+      let part3 = document.createElement("div");
+      part3.className = "mobile";
+      part3.innerHTML = `<b>Mobile </b>${employee.mobile}`;
+
+      let part4 = document.createElement("detail");
+      part4.className = "address";
+      part4.innerHTML = "<details><summary>Address</summary><span>" + employee.address + "</span></details>";
+
+       let part5 = document.createElement("div");
+       part5.className = "button";
+
+       let editButton = document.createElement("button");
+       editButton.className = 'editbutton';
+       editButton.innerHTML = `<i class="fa-solid fa-pen"></i>`;
+
+       let dltButton = document.createElement("button");
+       dltButton.className = 'deletebutton';
+       dltButton.innerHTML = `<i class="fa-solid fa-trash"></i>`;
+
+        part5.append(editButton,dltButton);
+      info.append(part1, part2, part3, part4, part5);
+      container.appendChild(item); // Append the <div> to the container
+      });
+     }
+       employeeDetails();
+
+      let eb = document.querySelectorAll('.editbutton');
+      eb.forEach(function(sid){
+        sid.addEventListener('click',edit);
+      });
+
+      let db = document.querySelectorAll('.deletebutton');
+      db.forEach(function(button){
+        button.addEventListener('click',del);
+      });
+
+     
+
+      function edit(){
+        alert("Edit button is clicked");
+      };
+
+      function del(){
+        alert("Delete Button Clicked");
       }
+
+
       
+
+
     </script>
     <script src="assets/fontawesome/js/all.js"></script>
   </body>

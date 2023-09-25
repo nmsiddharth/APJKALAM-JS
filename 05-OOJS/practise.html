@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+<style>
+        #employeeDetails{
+            flex-wrap: wrap ;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+
+            background: linear-gradient(to bottom, #ff6b6b, #6b8cff);
+            justify-content: space-between;
+            
+        }
+        .card {
+           
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+        .employe-img{
+            
+            max-width: 100%;
+            border-radius: 5px;
+            box-shadow: 0px 2px 6px rgb(16, 26, 55);
+        }
+        .employe-img:hover{
+            box-shadow: none ;
+        
+        }
+        .about{
+            color: rgb(255, 225, 0);
+            text-align: center;
+            font-weight: 600;
+            font-size: 20px;
+            text-transform:uppercase;
+
+        }
+        .carrer{
+
+            text-align: center;
+            color:#f4da12 ;
+            font-family:'Times New Roman',Times, serif;
+            text-transform:uppercase;
+            font-weight: 800;
+        }
+        .mail{
+                text-decoration: none;
+                color: black;
+                text-align: center;
+                font-size: 20px;
+
+        }
+        .contact{
+          text-align: center;
+          font-weight: 800;
+        }
+            
+        
+        .button {
+            display: flex;
+            justify-content: space-between;
+            border-radius: 15px;
+        }
+        .edit-button, .delete-button {
+            border-radius: 10px;
+            background-color: rgb(15, 15, 41);
+            color: #fff;
+            padding: 10px 20px ;
+            cursor: pointer;
+        }
+        .delete-button:hover{
+            border: 2px solid orangered;
+            background-color: transparent;
+            color: black;
+            transition: 1.2s ease-in-out;
+
+        } 
+        .edit-button:hover{
+            border: 2px solid orangered;
+            background-color: transparent;
+            color: black;
+            transition: 1.2s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="employeeDetails">
+    </div>
+
+    <script>
+        var employees = [
+            { img :"Assets/Images/21.avif",
+                name: "Eleanor",
+            designation: "HR",
+              email :"eleanor@gmail.com",
+              Mobile:"8687677756"
+             },
+
+            { img :"Assets/Images/42.avif",
+            
+                 name: "Ayesha",
+            designation: "Team lead(TL)",
+              email :"ayesha@gmail.com",
+              Mobile:"9978766568"
+            },
+            {img :"Assets/Images/43.avif",
+                 name: "genilia",
+            designation: "Project manager",
+              email :"genilia@gmail.com",
+              Mobile:"6788965877"
+            },
+            {img :"Assets/Images/41.avif",
+                 name: "Nicky",
+            designation: "sales manager",
+              email :"Nicky@gmail.com",
+              Mobile:"7887667855"
+            },
+            {img :"Assets/Images/19.avif",
+                 name: "Aradhya",
+            designation: "Project manager",
+              email :"aradya@gmail.com",
+              Mobile:"8786866778"
+            },
+            {img :"Assets/Images/20.avif",
+                 name: "Sara",
+            designation: "Project manager",
+              email :"Sara@gmail.com",
+              Mobile:"9088687687"
+            },
+            {img :"Assets/Images/40.avif",
+                 name: "Byung-Ho",
+            designation: "Project manager",
+              email :"byung-Ho@gmail.com",
+              Mobile:"9878687789"
+            },
+            {img :"Assets/Images/38.jpg",
+                 name: "Shree",
+            designation: "Project manager",
+            email :"shree@gmail.com",
+
+              Mobile:"6362681908"
+            },
+            {img :"Assets/Images/37.avif",
+                 name: "Sitara",
+            designation: "Project manager",
+              email :"sitara@gmail.com",
+              Mobile:"9866886888"
+          
+            },
+            {img :"Assets/Images/36.avif",
+                 name: "Aliya",
+            designation: "Project manager",
+              email :"aliya@gmail.com",
+              Mobile:"8779888765"
+
+            },
+            {img :"Assets/Images/35.avif",
+                 name: "John",
+            designation: "Project manager",
+              email :"john@gmail.com",
+              Mobile:"9787767878"
+
+            },
+            {img :"Assets/Images/34.avif",
+                 name: "paxton",
+            designation: "Project manager",
+              email :"paxton@gmail.com",
+              Mobile:"8867657676"
+
+            },
+            {img :"Assets/Images/33.avif",
+                 name: "peter",
+            designation: "Project manager",
+              email :"peter@gmail.com",
+              Mobile:"8987667576"
+
+            },
+            {img :"Assets/Images/32.avif",
+                 name: "George",
+            designation: "Project manager",
+              email :"george@gmail.com",
+              Mobile:"8987678657"
+
+            },
+            {img :"Assets/Images/31.avif",
+                 name: "Chris",
+            designation: "Project manager",
+              email :"chris@gmail.com",
+              Mobile:"9888776768"
+
+            },
+            {img :"Assets/Images/30.avif",
+                 name: "cyabriel",
+            designation: "Project manager",
+              email :"cyabriel@gmail.com",
+              Mobile:"9887766767"
+
+            },
+            {img :"Assets/Images/29.avif",
+                 name: "mia",
+            designation: "Project manager",
+              email :"mia@gmail.com",
+              Mobile:"9009877867"
+
+            },
+            {img :"Assets/Images/28.avif",
+                 name: "isabella",
+            designation: "Project manager",
+              email :"isabella@gmail.com",
+              Mobile:"9898888876"
+
+            },
+            {img :"Assets/Images/38.avif",
+                 name: "Charlotte",
+            designation: "Project manager",
+              email :"Charlotte@gmail.com",
+              Mobile:"9787776897"
+
+            },
+            {img :"Assets/Images/39.avif",
+                 name: "Ava",
+            designation: "Project manager",
+              email :"ava@gmail.com",
+              Mobile:"9788777687"
+
+            },
+           
+        ];
+    
+        function EmployeeCards() {
+            let employeeDetails = document.getElementById("employeeDetails");
+    
+            employees.forEach(function (employee) {
+                let card = document.createElement("div");
+                card.className = "card";
+
+                let img = document.createElement('img');
+                img.className = "employe-img";
+                img.src = employee.img;
+
+                let name = document.createElement("p");
+                name.className = 'about';
+                name.textContent = "Name: " + employee.name;
+                
+                let Mobile = document.createElement('p');
+                Mobile.className = "contact";
+                Mobile.textContent='Mobile:'+employee.Mobile;
+    
+                let designation= document.createElement("p");
+                designation.className = 'carrer';
+                designation.textContent = "Designation: " + employee.designation;
+
+    
+
+                let mail = document.createElement('p');
+                mail.className = 'mail';
+                mail.textContent ="Email:"+employee.email;
+
+                let button = document.createElement("div");
+                button.className = "button";
+
+                let editButton = document.createElement("button");
+                editButton.className = "edit-button";
+                editButton.textContent = "Edit";
+
+                let deleteButton = document.createElement("button");
+                deleteButton.className = "delete-button";
+                deleteButton.textContent = "Delete";
+
+
+
+                card.appendChild(img);
+                card.appendChild(name);
+                card.appendChild(designation);
+                card.appendChild(Mobile);
+                card.appendChild(mail);
+                button.appendChild(editButton);
+                button.appendChild(deleteButton);
+                card.appendChild(button);
+    
+                employeeDetails.appendChild(card);
+            });
+        }
+    
+        EmployeeCards();
+    </script>
+    
+</body>
+</html>
