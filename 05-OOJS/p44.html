@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>OOJS</title>
+    </head>
+    <body>
+        <center>
+            <h1>Get and Set methods</h1>
+        </center>
+        <hr>
+
+        <script>
+            class Card{
+                constructor(){
+
+                    this.cardNum;  
+                } 
+                get cardNum() {
+                    return this.number;  
+
+                }
+                set cardNum(val){
+                    this.number = val;
+                }
+            }
+            let x = new Card();
+
+            x.cardNum = "0983 8705 5466 6345";
+            document.write(`<h1>${x.cardNum}</h1>`);
+        </script>
+    </body>
+</html>
