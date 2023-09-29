@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-DropDown</title>
+</head>
+<body>
+    <center>
+        <h1>Countries and its States</h1>
+    </center>
+    <hr>
+    <label for="countries">Countries :</label>
+    <select name="countries" id="countries">
+        <option value="" selected>Select Countries</option>
+        <option value="1">India</option>
+        <option value="2">USA</option>
+        <!-- Add more countries here -->
+    </select>
+    <br><br>
+    <label for="states">States :</label>
+    <select name="States" id="states">
+        <option value="" selected>States</option>
+    </select>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let countriesSelect = document.getElementById("countries");
+            let statesSelect = document.getElementById("states");
+            let details = [{
+                    name: "India",
+                    states: ["Karnataka", "Andhra Pradesh", "Kerala"]
+                },
+                {
+                    name: "USA",
+                    states: ["California", "Texas", "Alaska"]
+                },
+                // Add more country details here
+            ];
+
+            countriesSelect.addEventListener('change', function () {
+                let selectedCountry = countriesSelect.value;
+                statesSelect.innerHTML = "<option value='' selected>States</option>";
+
+                if (selectedCountry !== "") {
+                    let selectedCountryDetails = details.find(country => country.name === selectedCountry);
+                    if (selectedCountryDetails) {
+                        selectedCountryDetails.states.forEach(state => {
+                            statesSelect.innerHTML += `<option value="${state}">${state}</option>`;
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

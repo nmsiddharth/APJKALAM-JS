@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-DropDown</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+        }
+        .banner{
+            background: url(../06-OOJS/assets/images/image16.jpg)no-repeat center;
+            background-size: cover;
+            height: 100vh;
+            display: flex ;
+            justify-content: center;
+            align-items: center;
+             flex-flow: column; 
+        }
+        div{
+            background-color: rgba(255, 255, 255,0.7);
+           width: fit-content;
+           border-radius: 20px;
+           font-size: 30px;
+           padding: 10px; 
+         margin: 20px auto;
+        }
+        select{
+            font-size: 30px;
+            border: none;
+            background-color: transparent;
+            color: teal;
+        }
+        h1{
+            font-size: 40px;
+            background-color: coral;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body>
+   <section class="banner">
+    <center>
+        <h1>Countries and its States</h1>
+    </center>
+    <hr>
+    <div>
+        <label for="countries">Countries :</label>
+    <select name="countries" id="countries">
+        <option value="" selected disabled>Select Countries</option>
+        <option value="0">India</option>
+        <option value="1">USA</option>
+        <option value="2">England</option>
+        <option value="3">Germany</option>
+        <option value="4">South Africa</option>
+        <option value="5">Japan</option>
+        <option value="6">Norway</option>
+        <option value="7">Russia</option>
+        <option value="8">Swedan</option>
+        <option value="9">Brazil</option>
+    </select>
+</div>
+    <br><br>
+    <div>
+        <label for="States">States :</label>
+    <select name="States" id="States">
+        <option value="" selected disabled>States</option>
+    </select>
+   </section>
+    </div>
+    
+
+    <script>
+        let details = [{
+                name: "India",
+                states: ["Karnataka", "Andhra Pradesh", "Kerala"]
+            },
+            {
+                name: "USA",
+                states: ["California", "Texas", "Alaska"]
+            },
+            {
+                name: "England",
+                states: ["London", "North West", "East of England"]
+            },
+            {
+                name: "Germany",
+                states: ["Bavaria", "Hessen", "Saxony"]
+            },
+            {
+                name: "South Africa",
+                states: ["Eastern Cape", "Northern Cape", "Free State"]
+            },
+            {
+                name: "Japan",
+                states: ["Fukushima", "Akita", "Oita"]
+            },
+            {
+                name: "Norway",
+                states: ["Northern Norway", "Western Norway", "Southern Norway"]
+            },
+            {
+                name: "Russia",
+                states: ["Altai", "Amur", "Chelyabinsk"]
+            },
+            {
+                name: "Sweden",
+                states: ["Skane", "Lappland", "Uppland"]
+            },
+            {
+                name: "Brazil",
+                states: ["Parana", "Ceara", "Sao Paulo"]
+            },
+        ];
+
+ 
+            document.getElementById('countries').addEventListener('change', show);
+            let state = document.getElementById('States');
+
+            function show(){
+                let countryValue = document.getElementById('countries').value;
+                state.innerHTML = " ";
+                for (let index = 0; index < 3; index++) {
+                   state.innerHTML += `<option>${details[countryValue].states[index]}</option>`
+                    
+                }
+            }
+    </script>
+</body>
+
+</html>
