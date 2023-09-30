@@ -133,6 +133,45 @@
       border-color: transparent;
     }
 
+     /* Form Style*/
+     .banner>center>form{
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        width: fit-content;
+        padding: 20px; 
+      }
+      label{
+        font-size: 20px;
+        color: teal;
+        font-weight: bold;
+      }
+      form>h1{
+        color: burlywood;
+          font-weight: bold;
+      }
+      form>button{
+        margin: 10px;
+      }
+      form>[type="submit"]{
+        background-color: rgb(10, 122, 213);
+        color: white;
+        padding: 10px;
+        border-color: transparent;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.35) 2.95px 2.95px 3.6px;
+      }
+      form>[type="reset"]{
+        background-color: rgb(247, 11, 98);
+        color: white;
+        padding: 10px;
+        border-color: transparent;
+        border-radius: 5px;
+        box-shadow: rgba(0, 0, 0, 0.35) 2.95px 2.95px 3.6px;
+      }
+ 
 
 
     /* Media code */
@@ -194,17 +233,17 @@
 <body>
   <center>
     <h1>CONTACT LIST</h1>
-    <button> Add</button>
   </center>
   <section class="container" id="container"></section>
 
   <!-- Form -->
-  <section class="back">
+ 
     <section class="banner">
         <center>
-           <h1>Form</h1>
+          
 
-            <form onsubmit="validation(event)" name="myForm">
+            <form onsubmit="validation(event)" name="myForm" autocomplete="on">
+              <h1>Form</h1>
 
               <label for="img">Choose Image</label>
               <br>
@@ -233,16 +272,17 @@
                 <br>
 
                 <label for="addr">Address</label>
-                <input type="text" name="addr" id="addr">
+                <br>
+                <textarea name="addr" id="addr" cols="30" rows="10" placeholder="Address"></textarea>
+                <!-- <input type="text" name="addr" id="addr"> -->
+                <h3 id="result4"></h3>
 
 
                 <button type="submit">Submit</button>
-               
+                <button type="reset" onclick="resett()">Reset</button>
             </form>
-
-           
-
         </center>
+      
     </section>
 
   <script>
@@ -297,7 +337,7 @@
       },
       {
         profilePic: "assets/images/image4g.jpg",
-        name: "Mi Young",
+        name: "Miyoung",
         email: "miy@gmail.com",
         mobile: '99010496718',
         address: "Uttarhalli",
@@ -446,19 +486,23 @@
                 var output2 = document.getElementById("result2");
                 let input3 = document.getElementById("mob").value;
                 var output3 = document.getElementById("result3");
+                let input4 =  document.getElementById("addr").value;
+                var output4 = document.getElementById("result4");
                
 
                 // var display = document.getElementById("result");
                
 
-                var regex2 = /^[a-z]{1,}\s([a-z]{1,}\s)?[a-z]{1,}$/i;
-                var regex = /^[a-z]\S+@\S+\.\S+$/;
-                var regex1 = /^[6-9]\d{9}$/;
+                var regex2 = /^[A-Z]{1}\S[a-z]{1,}$/i; // For name
+                var regex = /^[a-z]\S+@\S+\.\S+$/;  // for email
+                var regex1 = /^[6-9]\d{9}$/;  // For Mobile Number
+                // var regex4 = /^\w{4,}$/i;
+                var regex4 = /^[A-Za-z]+(?:\s[A-Za-z]+)*$/;  // for address
 
                 // Image validation
-                const maxSize = 2*1024*1024;  // 2MB
+                // const maxSize = 2*1024*1024;  // 2MB
 
-                if (!input) {
+                if (!input0) {
                   output0.style.color = "red";
                   output0.innerHTML = "Please select an image";
                 }
@@ -479,7 +523,7 @@
                     output.style.color = "red";
                     output.innerHTML = "Name field cannot be empty";
                 } else {
-                    if (regex2.test(input) == false) {
+                    if (regex2.test(input) == false){
                         output.style.color = "red";
                         output.innerHTML = " Please enter Valid UserName";
                     } else {
@@ -495,16 +539,19 @@
                 if (input2.length == 0) {
                     output2.style.color = "red";
                     output2.innerHTML = "Please enter Email ID";
-                } else {
-                    if (regex.test(input2) === false) {
-                        output2.style.color = "red";
-                        output2.innerHTML = "Invalid Email ID";
-                    } else {
+                } 
+                else{
+                  if(regex.test(input2) == false){
+                    output2.style.color = "red";
+                    output2.innerHTML = "Please enter Valid Email ID";
+                  }
+                else {
                         output2.style.color = "green";
                         output2.innerHTML = "Valid email";
                         // display.innerHTML += `${input2}<br>`;
                     }
-                }
+                  }
+                
 
 
                 // MObile Number Validation
@@ -523,9 +570,81 @@
                     }
                 }
 
-              }
-            
+                // Address validation
 
+                if(input4.length==0){
+                  output4.style.color = "red";
+                    output4.innerHTML = "Please provide the Address";
+                }
+                else{
+                  if(regex4.test(input4)== false){
+                    output4.style.color = "red";
+                    output4.innerHTML = "InValid Address";
+                  }
+                else{
+                  output4.style.color = "green";
+                        output4.innerHTML = "Valid Address";
+                }
+              }
+
+              // validating all 
+
+                let res = [result0,result1,result2,result3,result4];
+                let count =0
+                for (let index = 0; index < res.length; index++) {
+                  if(res[index].style.color == "green"){
+                    count++;
+                  }
+                }
+                if(count==5){
+                 details.push(
+                  {
+                    profilePic: "assets/images/image5g.jpg",
+                    name: "Cindy",
+                    email: "cindy@gmail.com",
+                    mobile: '9901034718',
+                    address: "Majestic",
+                  }
+                 );
+                 employeeDetails();
+                }
+                else{
+                  document.getElementById("test").innerHTML= "Not working" ;
+                }
+
+              }
+
+              function resett() {
+                let clear0 = document.getElementById("result0");
+                clear0.innerHTML = "";
+                // let formClear = document.getElementById("result");
+                // formClear.innerHTML = "";
+                let clear = document.getElementById("result1");
+                clear.innerHTML = "";
+                let clear2 = document.getElementById("result2");
+                clear2.innerHTML = "";
+                let clear3 = document.getElementById("result3");
+                clear3.innerHTML = "";
+                 let clear4 = document.getElementById("result4");
+                 clear4.innerHTML = "";
+                // let clear5 = document.getElementById("result5");
+                // clear5.innerHTML = "";
+                // let clear6 = document.getElementById("result6");
+                // clear6.innerHTML = "";
+
+
+                // let res = [result0,result1,result2,result3,result4];
+                // let inputVal = [input0,input,input2,input3,input4];
+
+                // for (let index = 0; index < res.length; index++) {
+                //  res[index].innerHTML = "";
+                
+                  
+                // }
+
+            }
+            
+          
            
   </script>
 </body>
