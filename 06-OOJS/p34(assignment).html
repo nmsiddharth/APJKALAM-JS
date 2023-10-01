@@ -31,8 +31,8 @@
       margin: 13px;
       margin-left: 10px;
       /* margin-top: 20px;
-        margin-bottom: 10px; */
       /* margin-left: 58px; */
+      margin-bottom: 10px;
       display: flex;
       flex-flow: column nowrap;
       border-radius: 10px;
@@ -44,7 +44,7 @@
       } */
 
     .item:hover {
-      transform: scale(1.1, 1.1);
+      transform: scale(1.05, 1.05);
     }
 
     img {
@@ -66,7 +66,7 @@
       /* display: flex;
         justify-content: space-around;
         align-items: center; */
-      word-spacing: 150px;
+      word-spacing: 100px;
       padding: 15px;
       margin: auto 35px;
       line-height: 1;
@@ -133,45 +133,51 @@
       border-color: transparent;
     }
 
-     /* Form Style*/
-     .banner>center>form{
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        justify-content: center;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        width: fit-content;
-        padding: 20px; 
-      }
-      label{
-        font-size: 20px;
-        color: teal;
-        font-weight: bold;
-      }
-      form>h1{
-        color: burlywood;
-          font-weight: bold;
-      }
-      form>button{
-        margin: 10px;
-      }
-      form>[type="submit"]{
-        background-color: rgb(10, 122, 213);
-        color: white;
-        padding: 10px;
-        border-color: transparent;
-        border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.35) 2.95px 2.95px 3.6px;
-      }
-      form>[type="reset"]{
-        background-color: rgb(247, 11, 98);
-        color: white;
-        padding: 10px;
-        border-color: transparent;
-        border-radius: 5px;
-        box-shadow: rgba(0, 0, 0, 0.35) 2.95px 2.95px 3.6px;
-      }
- 
+    /* Form Style*/
+    .banner>center>form {
+      display: flex;
+      flex-flow: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      width: fit-content;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    label {
+      font-size: 20px;
+      color:blue;
+      font-weight: bold;
+    }
+
+    form>h1 {
+      color: burlywood;
+      font-weight: bold;
+    }
+
+    form>button {
+      margin: 10px;
+    }
+
+    form>[type="submit"] {
+      background-color: rgb(10, 122, 213);
+      color: white;
+      padding: 10px;
+      border-color: transparent;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.35) 2.95px 2.95px 3.6px;
+    }
+
+    form>[type="reset"] {
+      background-color: rgb(247, 11, 98);
+      color: white;
+      padding: 10px;
+      border-color: transparent;
+      border-radius: 5px;
+      box-shadow: rgba(0, 0, 0, 0.35) 2.95px 2.95px 3.6px;
+    }
+
 
 
     /* Media code */
@@ -203,7 +209,7 @@
     @media(min-width:769px) and (max-width:1200px) {
       .container {
         flex-flow: row wrap;
-        justify-content: center;
+        justify-content: flex-start;
         column-gap: 0px;
         /* justify-content: space-between; */
         /* width: 100%; */
@@ -237,53 +243,54 @@
   <section class="container" id="container"></section>
 
   <!-- Form -->
- 
-    <section class="banner">
-        <center>
-          
 
-            <form onsubmit="validation(event)" name="myForm" autocomplete="on">
-              <h1>Form</h1>
-
-              <label for="img">Choose Image</label>
-              <br>
-             <input type="file" name="img" id="img" accept="image/*">
-             <h3 id="result0"></h3>
-
-              <br>
-
-                <label for="">Name</label>
-                <br>
-                <input type="text" name="name" id="name1">
-                <h3 id="result1"></h3>
+  <section class="banner">
+    <center>
 
 
-                <label for="">Email id</label>
-                <br>
-                <input type="text" name="email" id="email">
-                <h3 id="result2"></h3>
+      <form onsubmit="validation(event)" name="myForm" autocomplete="on" enctype="multipart/form-data">
+        <h1>Form</h1>
+
+        <label for="img">Choose Image</label>
+        <br>
+        <input type="file" name="img" id="img" accept="image/*" onchange="displayImage()">
+        <h3 id="result0"></h3>
+
+        <img id="selectedImage" src="" alt="Selected Image" style="display: none;">
+
+        <label for="">Name</label>
+        <br>
+        <input type="text" name="name" id="name1">
+        <h3 id="result1"></h3>
 
 
-                <label for="">Mobile Number</label>
-                <br>
-                <input type="text" name="mob" id="mob">
-                <h3 id="result3"></h3>
-
-                <br>
-
-                <label for="addr">Address</label>
-                <br>
-                <textarea name="addr" id="addr" cols="30" rows="10" placeholder="Address"></textarea>
-                <!-- <input type="text" name="addr" id="addr"> -->
-                <h3 id="result4"></h3>
+        <label for="">Email id</label>
+        <br>
+        <input type="text" name="email" id="email">
+        <h3 id="result2"></h3>
 
 
-                <button type="submit">Submit</button>
-                <button type="reset" onclick="resett()">Reset</button>
-            </form>
-        </center>
-      
-    </section>
+        <label for="">Mobile Number</label>
+        <br>
+        <input type="text" name="mob" id="mob">
+        <h3 id="result3"></h3>
+
+        <br>
+
+        <label for="addr">Address</label>
+        <br>
+        <textarea name="addr" id="addr" cols="30" rows="10" placeholder="Address"></textarea>
+        <!-- <input type="text" name="addr" id="addr"> -->
+        <h3 id="result4"></h3>
+
+
+        <button type="submit">Submit</button>
+        <button type="reset" onclick="resett()">Reset</button>
+      </form>
+      <h3 id="message"></h3>
+    </center>
+
+  </section>
 
   <script>
     var details = [{
@@ -476,176 +483,161 @@
   <script src="assets/fontawesome/js/all.js"></script>
 
   <script>
-     function validation(e) {
-                e.preventDefault();
-                let input0 = document.getElementById('img').value;
-                var output0 = document.getElementById("result0");
-                let input = document.getElementById("name1").value;
-                var output = document.getElementById("result1");
-                let input2 = document.getElementById("email").value;
-                var output2 = document.getElementById("result2");
-                let input3 = document.getElementById("mob").value;
-                var output3 = document.getElementById("result3");
-                let input4 =  document.getElementById("addr").value;
-                var output4 = document.getElementById("result4");
-               
-
-                // var display = document.getElementById("result");
-               
-
-                var regex2 = /^[A-Z]{1}\S[a-z]{1,}$/i; // For name
-                var regex = /^[a-z]\S+@\S+\.\S+$/;  // for email
-                var regex1 = /^[6-9]\d{9}$/;  // For Mobile Number
-                // var regex4 = /^\w{4,}$/i;
-                var regex4 = /^[A-Za-z]+(?:\s[A-Za-z]+)*$/;  // for address
-
-                // Image validation
-                // const maxSize = 2*1024*1024;  // 2MB
-
-                if (!input0) {
-                  output0.style.color = "red";
-                  output0.innerHTML = "Please select an image";
-                }
-                //  if(image.size > maxSize){
-                //   output0.style.color = 'red';
-                //   output0.innerHTML= `Image size should be less than 2 Mb bytes`;
-                // }
-                else{
-                  output0.style.color = "green";
-                  output0.innerHTML = "Image Selected";
-                }
-
-                
+    function validation(e) {
+      e.preventDefault();
+      let input0 = document.getElementById('img').value;
+      var output0 = document.getElementById("result0");
+      let input = document.getElementById("name1").value;
+      var output = document.getElementById("result1");
+      let input2 = document.getElementById("email").value;
+      var output2 = document.getElementById("result2");
+      let input3 = document.getElementById("mob").value;
+      var output3 = document.getElementById("result3");
+      let input4 = document.getElementById("addr").value;
+      var output4 = document.getElementById("result4");
 
 
-
-                if (input.length == 0) {
-                    output.style.color = "red";
-                    output.innerHTML = "Name field cannot be empty";
-                } else {
-                    if (regex2.test(input) == false){
-                        output.style.color = "red";
-                        output.innerHTML = " Please enter Valid UserName";
-                    } else {
-                        output.style.color = "green";
-                        output.innerHTML = "Valid UserName";
-                        // display.innerHTML += `${input} <br>`;
-                    }
-                }
+      // var display = document.getElementById("result");
 
 
-                //  Email Validation
-
-                if (input2.length == 0) {
-                    output2.style.color = "red";
-                    output2.innerHTML = "Please enter Email ID";
-                } 
-                else{
-                  if(regex.test(input2) == false){
-                    output2.style.color = "red";
-                    output2.innerHTML = "Please enter Valid Email ID";
-                  }
-                else {
-                        output2.style.color = "green";
-                        output2.innerHTML = "Valid email";
-                        // display.innerHTML += `${input2}<br>`;
-                    }
-                  }
-                
+      var regex2 = /^[A-Z]{1}\S[a-z]{1,}$/i; // For name
+      var regex = /^[a-z]\S+@\S+\.\S+$/; // for email
+      var regex1 = /^[6-9]\d{9}$/; // For Mobile Number
+      // var regex4 = /^\w{4,}$/i;
+      var regex4 = /^[A-Za-z]+(?:\s[A-Za-z]+)*$/; // for address
 
 
-                // MObile Number Validation
+      // Image validation
 
-                if (input3.length == 0) {
-                    output3.style.color = "red";
-                    output3.innerHTML = "Mobile field cannot be empty";
-                } else {
-                    if (regex1.test(input3) == false) {
-                        output3.style.color = "red";
-                        output3.innerHTML = "Invalid Mobile number";
-                    } else {
-                        output3.style.color = "green";
-                        output3.innerHTML = "Valid Mobile Number";
-                        // display.innerHTML += `${input3} <br>`;
-                    }
-                }
-
-                // Address validation
-
-                if(input4.length==0){
-                  output4.style.color = "red";
-                    output4.innerHTML = "Please provide the Address";
-                }
-                else{
-                  if(regex4.test(input4)== false){
-                    output4.style.color = "red";
-                    output4.innerHTML = "InValid Address";
-                  }
-                else{
-                  output4.style.color = "green";
-                        output4.innerHTML = "Valid Address";
-                }
-              }
-
-              // validating all 
-
-                let res = [result0,result1,result2,result3,result4];
-                let count =0
-                for (let index = 0; index < res.length; index++) {
-                  if(res[index].style.color == "green"){
-                    count++;
-                  }
-                }
-                if(count==5){
-                 details.push(
-                  {
-                    profilePic: "assets/images/image5g.jpg",
-                    name: "Cindy",
-                    email: "cindy@gmail.com",
-                    mobile: '9901034718',
-                    address: "Majestic",
-                  }
-                 );
-                 employeeDetails();
-                }
-                else{
-                  document.getElementById("test").innerHTML= "Not working" ;
-                }
-
-              }
-
-              function resett() {
-                let clear0 = document.getElementById("result0");
-                clear0.innerHTML = "";
-                // let formClear = document.getElementById("result");
-                // formClear.innerHTML = "";
-                let clear = document.getElementById("result1");
-                clear.innerHTML = "";
-                let clear2 = document.getElementById("result2");
-                clear2.innerHTML = "";
-                let clear3 = document.getElementById("result3");
-                clear3.innerHTML = "";
-                 let clear4 = document.getElementById("result4");
-                 clear4.innerHTML = "";
-                // let clear5 = document.getElementById("result5");
-                // clear5.innerHTML = "";
-                // let clear6 = document.getElementById("result6");
-                // clear6.innerHTML = "";
+      if (!input0) {
+        output0.style.color = "red";
+        output0.innerHTML = "Please select an image";
+      } else {
+        output0.style.color = "green";
+        output0.innerHTML = "Image Selected";
+      }
 
 
-                // let res = [result0,result1,result2,result3,result4];
-                // let inputVal = [input0,input,input2,input3,input4];
+      var imgInput = document.getElementById("img");
 
-                // for (let index = 0; index < res.length; index++) {
-                //  res[index].innerHTML = "";
-                
-                  
-                // }
 
-            }
-            
-          
-           
+      // UserName Validation
+
+
+      if (input.length == 0) {
+        output.style.color = "red";
+        output.innerHTML = "Name field cannot be empty";
+      } else {
+        if (regex2.test(input) == false) {
+          output.style.color = "red";
+          output.innerHTML = " Please enter Valid UserName";
+        } else {
+          output.style.color = "green";
+          output.innerHTML = "Valid UserName";
+          // display.innerHTML += `${input} <br>`;
+        }
+      }
+
+
+      //  Email Validation
+
+      if (input2.length == 0) {
+        output2.style.color = "red";
+        output2.innerHTML = "Please enter Email ID";
+      } else {
+        if (regex.test(input2) == false) {
+          output2.style.color = "red";
+          output2.innerHTML = "Please enter Valid Email ID";
+        } else {
+          output2.style.color = "green";
+          output2.innerHTML = "Valid email";
+          // display.innerHTML += `${input2}<br>`;
+        }
+      }
+
+
+
+      // MObile Number Validation
+
+      if (input3.length == 0) {
+        output3.style.color = "red";
+        output3.innerHTML = "Mobile field cannot be empty";
+      } else {
+        if (regex1.test(input3) == false) {
+          output3.style.color = "red";
+          output3.innerHTML = "Invalid Mobile number";
+        } else {
+          output3.style.color = "green";
+          output3.innerHTML = "Valid Mobile Number";
+          // display.innerHTML += `${input3} <br>`;
+        }
+      }
+
+      // Address validation
+
+      if (input4.length == 0) {
+        output4.style.color = "red";
+        output4.innerHTML = "Please provide the Address";
+      } else {
+        if (regex4.test(input4) == false) {
+          output4.style.color = "red";
+          output4.innerHTML = "InValid Address";
+        } else {
+          output4.style.color = "green";
+          output4.innerHTML = "Valid Address";
+        }
+      }
+
+      // validating all 
+
+      let res = [result0, result1, result2, result3, result4];
+      let count = 0
+      for (let index = 0; index < res.length; index++) {
+        if (res[index].style.color == "green") {
+          count++;
+        }
+      }
+      if (count == 5) {
+        document.getElementById('container').innerHTML = " ";
+        details.push({
+          profilePic: selectedImage.src,
+          name: input,
+          email: input2,
+          mobile: input3,
+          address: input4,
+        });
+        employeeDetails();
+      } else {
+        document.getElementById('message').innerHTML = "Please Provide Inputs and valid Information";
+      }
+
+    }
+
+    function resett() {
+      let clear0 = document.getElementById("result0");
+      clear0.innerHTML = "";
+      let clear = document.getElementById("result1");
+      clear.innerHTML = "";
+      let clear2 = document.getElementById("result2");
+      clear2.innerHTML = "";
+      let clear3 = document.getElementById("result3");
+      clear3.innerHTML = "";
+      let clear4 = document.getElementById("result4");
+      clear4.innerHTML = "";
+
+    }
+
+    function displayImage() {
+      var imgInput = document.getElementById("img");
+      var selectedImage = document.getElementById("selectedImage");
+
+      if (imgInput.files.length > 0) {
+        var selectedFile = imgInput.files[0];
+        selectedImage.src = URL.createObjectURL(selectedFile);
+      } else {
+        selectedImage.src = ""; // Clear the image if no file is selected
+      }
+    }
   </script>
 </body>
 
