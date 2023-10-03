@@ -257,6 +257,8 @@
         <h3 id="result0"></h3>
 
         <img id="selectedImage" src="" alt="Selected Image" style="display: none;">
+<!-- 
+        <input type="image" name="editImg" id="editImg" accept="image/*"> -->
 
         <label for="">Name</label>
         <br>
@@ -284,8 +286,10 @@
         <h3 id="result4"></h3>
 
 
-        <button type="submit">Submit</button>
+        <button type="submit" id="submit">Submit</button>
         <button type="reset" onclick="resett()">Reset</button>
+
+        <input type="hidden"  id="msgs">
       </form>
       <h3 id="message"></h3>
     </center>
@@ -414,12 +418,16 @@
       //   container.appendChild(item); // Append the <div> to the container
       // }
 
-      details.forEach(employee => {
+      // var temp = 0;
+     for (var y = 0; y < details.length; y++) {
+
+      
+    
         const item = document.createElement("div"); // Create a new <div> element
         item.className = "item"; // Assign the "item" class to the <div>
 
         const img = document.createElement("img"); // Create a new <img> element
-        img.src = employee.profilePic;
+        img.src = details[y].profilePic;
         item.appendChild(img); // Append the <img> to the <div>
 
         let info = document.createElement("div");
@@ -428,19 +436,19 @@
 
         let part1 = document.createElement("div");
         part1.className = "name";
-        part1.innerHTML = employee.name;
+        part1.innerHTML = details[y].name;
 
         let part2 = document.createElement("div");
         part2.className = "email";
-        part2.innerHTML = `<b>Email </b>${employee.email}`;
+        part2.innerHTML = `<b>Email </b>${details[y].email}`;
 
         let part3 = document.createElement("div");
         part3.className = "mobile";
-        part3.innerHTML = `<b>Mobile </b>${employee.mobile}`;
+        part3.innerHTML = `<b>Mobile </b>${details[y].mobile}`;
 
         let part4 = document.createElement("detail");
         part4.className = "address";
-        part4.innerHTML = "<details><summary>Address</summary><span>" + employee.address + "</span></details>";
+        part4.innerHTML = "<details><summary>Address</summary><span>" + details[y].address + "</span></details>";
 
         let part5 = document.createElement("div");
         part5.className = "button";
@@ -448,36 +456,60 @@
         let editButton = document.createElement("button");
         editButton.className = 'editbutton';
         editButton.innerHTML = `<i class="fa-solid fa-pen"></i>`;
+        editButton.setAttribute('onclick',`editBtn(${y})`);
 
         let dltButton = document.createElement("button");
         dltButton.className = 'deletebutton';
         dltButton.innerHTML = `<i class="fa-solid fa-trash"></i>`;
+        dltButton.setAttribute('onclick', `dltUser(${y})`);
 
         part5.append(editButton, dltButton);
         info.append(part1, part2, part3, part4, part5);
         container.appendChild(item); // Append the <div> to the container
-      });
+          // temp++;
+      };
     }
     employeeDetails();
 
-    let eb = document.querySelectorAll('.editbutton');
-    eb.forEach(function (sid) {
-      sid.addEventListener('click', edit);
-    });
-
-    let db = document.querySelectorAll('.deletebutton');
-    db.forEach(function (button) {
-      button.addEventListener('click', del);
-    });
+  
 
 
+    function editBtn(y) {
+      let inp0 = document.getElementById('img');
+      // let editImage = document.getElementById('editImage');
+      var inp = document.getElementById("name1");
+      let inp2 = document.getElementById("email");
+      let inp3 = document.getElementById("mob");
+      let inp4 = document.getElementById("addr");
+      let button = document.getElementById('submit');
 
-    function edit() {
-      alert("Edit button is clicked");
+      let message1 = confirm("Do you want to edit user?");
+
+      if(message1){
+        document.getElementById('container').innerHTML = " ";
+        resett();
+        // editImage.setAttribute("src",details[y].profilePic);
+        //  inp0.value = "";
+        // editImage.displayImage()
+       inp.value= details[y].name;
+       inp2.value =  details[y].email ;
+       inp3.value = details[y].mobile;
+       inp4.value =   details[y].address;
+       button.innerHTML = "Edit";
+       let messages = document.getElementById('msgs');
+       messages.setAttribute('value',y);
+        employeeDetails();
+      }
     };
 
-    function del() {
-      alert("Delete Button Clicked");
+    function dltUser(y) {
+      let message = confirm("Do you want to delete this user?");
+      if(message){
+        document.getElementById('container').innerHTML = " ";
+        details.splice(y,1);
+        employeeDetails();
+      }
+
     }
   </script>
   <script src="assets/fontawesome/js/all.js"></script>
@@ -485,15 +517,15 @@
   <script>
     function validation(e) {
       e.preventDefault();
-      let input0 = document.getElementById('img').value;
+      var input0 = document.getElementById('img').value;
       var output0 = document.getElementById("result0");
-      let input = document.getElementById("name1").value;
+      var input = document.getElementById("name1").value;
       var output = document.getElementById("result1");
-      let input2 = document.getElementById("email").value;
+      var input2 = document.getElementById("email").value;
       var output2 = document.getElementById("result2");
-      let input3 = document.getElementById("mob").value;
+      var input3 = document.getElementById("mob").value;
       var output3 = document.getElementById("result3");
-      let input4 = document.getElementById("addr").value;
+      var input4 = document.getElementById("addr").value;
       var output4 = document.getElementById("result4");
 
 
@@ -598,6 +630,10 @@
         }
       }
       if (count == 5) {
+        if (button.innerHTML == "Edit") {
+          let messages = document.getElementById('msgs');
+          
+        }else{  
         document.getElementById('container').innerHTML = " ";
         details.push({
           profilePic: selectedImage.src,
@@ -607,6 +643,8 @@
           address: input4,
         });
         employeeDetails();
+        resett();
+      }
       } else {
         document.getElementById('message').innerHTML = "Please Provide Inputs and valid Information";
       }

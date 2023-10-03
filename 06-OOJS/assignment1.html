@@ -53,16 +53,7 @@
         <label for="countries">Countries :</label>
     <select name="countries" id="countries">
         <option value="" selected disabled>Select Countries</option>
-        <option value="0">India</option>
-        <option value="1">USA</option>
-        <option value="2">England</option>
-        <option value="3">Germany</option>
-        <option value="4">South Africa</option>
-        <option value="5">Japan</option>
-        <option value="6">Norway</option>
-        <option value="7">Russia</option>
-        <option value="8">Swedan</option>
-        <option value="9">Brazil</option>
+       
     </select>
 </div>
     <br><br>
@@ -120,8 +111,15 @@
 
  
             document.getElementById('countries').addEventListener('change', show);
-            let state = document.getElementById('States');
+            var state = document.getElementById('States');
 
+            var countries = document.getElementById("countries");
+            for (let j = 0; j < details.length; j++) {
+                countries.innerHTML +=  `<option value=${j}>${details[j].name}</option>`;
+
+                
+            }
+         
             function show(){
                 let countryValue = document.getElementById('countries').value;
                 state.innerHTML = " ";
