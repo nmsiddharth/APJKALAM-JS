@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Constructor</title>
+    </head>
+    <body>
+        <center>
+            <h1>Object </h1>
+        </center>
+        <hr>
+
+        <script>
+         function sample(){
+
+         } //function
+
+         let x = []; // array
+         let y = {};
+        </script>
+
+        <script>
+            var user = {
+                name: "John",
+                email: 'john@gmail.com',
+                age:30,
+                isView: true,
+                hobbies : ['driving','riding']
+            }
+
+            console.log(user);
+
+            document.write(`<h3>Name = ${user.name}</h3>`);
+            document.write(`<h3>Email = ${user['email']}</h3>`);
+            
+            document.write(`<h3>hobbies = ${user.hobbies}</h3>`);
+            document.write(`<h3>hobbies = ${user.hobbies[0]}</h3>`);
+
+            user.hobbies.forEach(function(x){
+                document.write(`<h1 style = 'color:red';>hobbies = ${x}</h1>`);
+            });
+        </script>
+    </body>
+</html>

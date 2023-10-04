@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Constructor</title>
+    </head>
+    <body>
+        <center>
+            <h1>Custom Constructor </h1>
+        </center>
+        <hr>
+
+        <script>
+         function Car() {
+
+            // local property
+            let a = 10;
+            alert(a);
+
+            // constructor property
+            this.x = 12;
+            this.title = "jeep";
+            this.model = 2011;
+            this.fuel = "petrol";
+            this.display = function(){
+                document.write(`<h3> display function</h3>`);
+            }
+         }
+
+         // instance of an constructor
+
+         var a = new Car();
+         console.log(a);
+
+         document.write(`<h3> ${a.title}</h3>`);
+         document.write(`<h3> ${a.model}</h3>`);
+         document.write(`<h3> ${a.fuel}</h3>`);
+         a.display();
+         
+        </script>
+
+       
+    </body>
+</html>
