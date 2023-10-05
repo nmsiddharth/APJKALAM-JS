@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Advanced</title>
+    </head>
+    <body>
+        <center>
+            <h1>ANONYMOUS CALLBACK FUNCTION or IMMEDIATE EXECUTION OF A FUNCTION </h1>
+        </center>
+        <hr>
+
+        <h2>JAVASCRIPT FUNCTIONS</h2>
+        <p>1) Local Function = <b>function A(){} </b></p>
+        <p>2) Expression Function = <b>let A = function (){} </b></p>
+        <p>3) Arrow Function =  <b>let A = () => {}</b> </p>
+        <p>4) CallBack Function = <b>forEach(function(item){};)</b></p>
+        <p>5) Closure Function = <b>function A(){function B(){} B();}</b></p>
+        <p>6) Anonymous Function = <b>()();</b></p>
+
+
+        <script>
+          // self constructor
+          // refresh onload
+
+          // Example-1
+
+          (function (){
+            alert("Hi SID");
+          })();
+
+          // Example-2
+
+          ((a,b)=>{
+            document.write(a);
+            document.write(b);
+          })(10,20);
+        </script>
+    </body>
+</html>
