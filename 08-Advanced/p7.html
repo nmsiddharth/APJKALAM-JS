@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Advanced</title>
+    </head>
+    <body>
+        <center>
+            <h1>addEventListener</h1>
+        </center>
+        <hr>
+
+       <button type="button" id="btn">Click Me</button>
+
+        <script>
+             var btn = document.getElementById('btn');
+
+          function sayHello(){
+            alert("HI, how are u?");
+          }
+
+          function HoverFunction(){
+           btn.style.backgroundColor = "red";
+          }
+
+          function NormalFunction(){
+           btn.style.backgroundColor = "";
+          }
+         
+         
+          btn.addEventListener('click',sayHello);
+          btn.addEventListener('mouseover',HoverFunction);
+          btn.addEventListener('mouseleave',NormalFunction);
+        </script>
+    </body>
+</html>

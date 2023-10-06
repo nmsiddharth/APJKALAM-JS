@@ -22,7 +22,33 @@
         <p>8) Generator Function = <b>function* A(){ yield 'A'; yield 'B'}</b></p>
 
         <script>
-        
+        function A(){
+            let a=10, b=20, sum;
+            sum = a+b;
+
+            return sum;
+            return a;
+            console.log(sum)
+        }
+        document.write(A());
+
+
+        function* users(){
+
+            // Yield is kind of like return
+            // return x returns the value of x , but yield x returns a function
+
+            yield 'Sid';
+            yield 'Mahesh';
+            yield 'Virat';
+            yield 'Cristiano';
+        }
+        console.log(users());
+        console.log(typeof users());
+
+        for (const item of users()) {
+            document.write(`<h3> ${item}</h3>`);
+        }
         </script>
     </body>
 </html>

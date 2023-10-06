@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Advanced</title>
+    </head>
+    <body>
+        <center>
+            <h1>removeEventListener Method</h1>
+        </center>
+        <hr>
+
+       <button type="button" id="btn">Click Me</button>
+
+        <script>
+             var btn = document.getElementById('btn');
+
+          function sayHello(){
+            alert("HI, how are u?");
+          }
+
+          btn.addEventListener('click',sayHello);
+          btn.removeEventListener('click',sayHello);
+        
+        </script>
+    </body>
+</html>
