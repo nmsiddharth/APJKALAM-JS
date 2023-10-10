@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Advanced</title>
+    </head>
+    <body>
+        <center>
+            <h1>STRICT MODE </h1>
+            <p>Strict mode if you initialize a variable with declaring it using the var keyword</p>
+        </center>
+        <hr>
+
+
+
+        <script>
+           "use strict";
+
+           function Hello(){
+            "use strict";
+            // var str;
+           str = "Hi";
+           console.log(str);
+           }
+           Hello();
+
+           function Sid(){
+            // var msg;
+            msg = "Hello";
+            return msg;
+           }
+           console.log(Sid());
+           
+        </script>
+        
+    </body>
+</html>
