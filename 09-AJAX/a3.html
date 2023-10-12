@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Assignment</title>
+    <style>
+        section{
+            width: 100%;
+            overflow-x: hidden;
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(450px,1fr));
+            grid-gap: 20px;
+        }
+        article{
+            background-color: grey;
+            font-size: 20px;
+            margin: 10px;
+            padding: 20px;
+            color: white;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            transition: 0.3s ease-in-out;
+            border-radius: 10px;
+        }
+        article:hover{
+            transform: scale(1.05,1.05);
+        }
+        article h5{
+            color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Assignment 3</h1>
+    </center>
+    <hr>
+
+    <section id="user"></section>
+
+    <script>
+        fetch(`https://jsonplaceholder.typicode.com/photos`)
+        .then(res => res.json())
+        .then(result =>{
+            console.log(result);
+
+            print(result);
+        })
+        .catch(error => {console.log(error.message)});
+
+        function print(data){
+            console.log('Function Data =', data);
+
+            data.forEach(item => {
+                let article = document.createElement('article');
+                let albumId = document.createElement('h4');
+                let id = document.createElement('h4');
+                let title = document.createElement('h4');
+                let url = document.createElement('h5');
+                let thumbnailUrl = document.createElement('h5');
+
+
+               
+
+                // Content
+
+                albumId.textContent = `albumId = ${item.albumId}`;
+                id.textContent = `Id = ${item.id}`;
+                title.textContent = `title = ${item.title}`;
+                url.textContent = `url = ${item.url}`;
+                thumbnailUrl.textContent = `thumbnailUrl = ${item.thumbnailUrl}`;
+
+               
+                
+
+                article.appendChild(albumId);
+                article.appendChild(id);
+                article.appendChild(title);
+                article.appendChild(url);
+                article.appendChild(thumbnailUrl);
+
+                
+
+             
+
+                let blk = document.querySelector("#user");
+
+                blk.appendChild(article);
+            });
+     }
+      
+    </script>
+</body>
+
+</html>

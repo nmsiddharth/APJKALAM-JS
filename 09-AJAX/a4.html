@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX Assignment</title>
+    <style>
+        section{
+            width: 100%;
+            overflow-x: hidden;
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(450px,1fr));
+            grid-gap: 20px;
+        }
+        article{
+            background-color: #1c1c1c;
+            font-size: 20px;
+            margin: 10px;
+            padding: 20px;
+            color: goldenrod;
+            border-radius: 10px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            transition: 0.3s ease-in-out;
+        }
+        article:hover{
+            transform: scale(1.05,1.05);
+        }
+       
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Assignment 3</h1>
+    </center>
+    <hr>
+
+    <section id="user"></section>
+
+    <script>
+        fetch(`https://jsonplaceholder.typicode.com/todos`)
+        .then(res => res.json())
+        .then(result =>{
+            console.log(result);
+
+            print(result);
+        })
+        .catch(error => {console.log(error.message)});
+
+        function print(data){
+            console.log('Function Data =', data);
+
+            data.forEach(item => {
+                let article = document.createElement('article');
+                let userId = document.createElement('h4');
+                let id = document.createElement('h4');
+                let title = document.createElement('h4');
+                let completed = document.createElement('h4');
+              
+
+
+               
+
+                // Content
+
+                userId.textContent = `userId = ${item.userId}`;
+                id.textContent = `Id = ${item.id}`;
+                title.textContent = `title = ${item.title}`;
+                completed.textContent = `completed = ${item.completed}`;
+               
+               
+                
+
+                article.appendChild(userId);
+                article.appendChild(id);
+                article.appendChild(title);
+                article.appendChild(completed);
+                
+
+                
+
+             
+
+                let blk = document.querySelector("#user");
+
+                blk.appendChild(article);
+            });
+     }
+      
+    </script>
+</body>
+
+</html>
