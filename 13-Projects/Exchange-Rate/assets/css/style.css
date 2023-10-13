@@ -40,3 +40,28 @@
 .container>.item{
     flex: 1;
 }
+.container>select, .container>input{
+    padding: 10px 20px;
+    border: 1px solid #dedede;
+    font-size: 16px;
+    background-color: #5fbaa7;
+    color: white;
+    border-radius: 5px;
+}
+.swap-rate>button, .swap-rate>div{
+    padding: 10px 20px;
+    border: 1px solid #000;
+    font-size: 16px;
+    background-color: lightgray;
+    color: gray;
+    border-radius: 5px;
+    transition: all 0.5s;
+}
+.swap-rate>button:hover{
+    background-color: #5fbaa7;
+    color: white;
+   font-weight: bold;
+}
+.swap-rate>button , .container select{
+    cursor:pointer
+}
