@@ -6,5 +6,8 @@
     .container h1{
         font-size: 30px;
     }
+    .container>.item{
+        width:100%;
+    }
 }
 
