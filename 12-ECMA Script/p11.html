@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ECMA-SCRIPT</title>
+    </head>
+    <body>
+        <center>
+            <h1>Array join -> Object Array</h1>
+        </center>
+        <hr>
+
+
+        <script>
+       let c1 = [
+        {
+        id: 234567,
+        name: "John",
+        age: 29
+        },
+        {
+            id: 234568,
+            name: "Jane",
+            age: 30
+        }
+    ];
+
+       let c2 = [
+        {
+            id: 223,
+            name: "Alice",
+            age: 25
+       },
+       {
+       id:6664,
+       name:"Sid",
+       age:30
+       }
+    ];
+       let c3 = [{
+        id:554,
+        name:"Bob",
+        age:31
+       },
+       ...c1,
+       ...c2
+    ];
+
+       console.log(c1);
+       console.log(c2);
+       console.log(c3);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ECMA-SCRIPT</title>
+    </head>
+    <body>
+        <center>
+            <h1>Map() Constructor</h1>
+        </center>
+        <hr>
+
+        <p>A Map is Constructor (basic mapping of key and Values),</p>
+        <p>Maps are different than an objects in that their keys can be anything (Primitive values as well as objects) not just strings and symbols</p>
+
+        <script>
+            var x = new Map();
+
+            // instance.set('Property','value');
+            // instance.get(property);
+
+            x.set('id',1232);
+            x.set('title','JS');
+            x.set('duration','1month');
+            x.set('isEnable',true);
+
+            console.log(x); // structure of output will be associative set { key => value}
+
+            console.log('id =', x.get('id'));
+            console.log('title =', x.get('title'));
+            console.log('duration =', x.get('duration'));
+
+            document.write(`<h3> ${x.get('id')} </h3>`);
+            document.write(`<h3> ${x.get('title')} </h3>`);
+            document.write(`<h3> ${x.get('duration')} </h3>`);
+
+
+
+        </script>
+    </body>
+</html>
