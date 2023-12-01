@@ -1,0 +1,10 @@
+@media(max-width:768px){
+    .item{
+        width:80%
+    }
+}
+@media(min-width:769px) and (max-width:1200px){
+    .item{
+        width:39%
+    }
+}

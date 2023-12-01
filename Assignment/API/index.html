@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API-ASSIGNMENT</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/media.css">
+</head>
+<body>
+    <center class="head">
+        <h1>API-ASSIGNMENT</h1>
+    </center>
+    <section id="container" class="container"></section>
+
+    <script>
+        fetch(`https://dummyjson.com/quotes`)
+        .then(response => response.json())
+        .then(result => {
+            output = result.quotes;
+            console.log(result.quotes);
+            quotes();
+        })
+        .catch(err => console.log(err.message));
+
+        function quotes() {
+            var quoteContainer = document.getElementById('container');
+
+          output.forEach(Element => {
+            const item = document.createElement('div');
+            item.className = 'item';
+
+            const h1 =  document.createElement('h3');
+            h1.className = 'title';
+            h1.innerHTML = Element.id
+
+            const blockquote = document.createElement('blockquote');
+            blockquote.className = 'blockquote';
+            blockquote.innerHTML = Element.quote
+
+            const cite = document.createElement('cite');
+            cite.className = 'cite';
+            cite.innerHTML = Element.author
+
+            item.append(h1,blockquote, cite);
+            container.appendChild(item);
+          });
+        }
+    </script>
+</body>
+</html>
